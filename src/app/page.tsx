@@ -1,6 +1,8 @@
 import Hero from "./components/landing/Hero";
 import ShortCourses from "./components/landing/ShortCourses";
 import BYD from "./components/landing/BYD";
+import Latest from "./components/landing/Latest";
+import Lead from "./components/landing/Lead";
 
 
 export default function Home() {
@@ -9,6 +11,9 @@ export default function Home() {
       <Hero />
       <ShortCourses />
       <BYD />
+      <Latest />
+      <Lead />
+
     </div>
   );
 }

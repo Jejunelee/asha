@@ -1,8 +1,8 @@
+// app/layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Jost } from "next/font/google";
 import "./globals.css";
-import Header from "@/app/components/landing/Header";
-import Footer from "@/app/components/landing/Footer";
+import LayoutWrapper from "./LayoutWrapper"; // We'll create this
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,9 +34,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${jost.variable} antialiased`}
       >
-<Header />
-        {children}
-<Footer /> 
+        <LayoutWrapper>{children}</LayoutWrapper>
       </body>
     </html>
   );

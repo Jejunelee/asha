@@ -45,11 +45,11 @@ export default function Header() {
   }, [open]);
 
   const navItems = [
-    { href: "/about", label: "About" },
-    { href: "/chro-program", label: "CHRO Program" },
-    { href: "/short-courses", label: "Short Courses" },
-    { href: "/partners-careers", label: "Partners & Careers" },
-    { href: "/alumni", label: "Alumni" },
+    { href: "/About", label: "About" },
+    { href: "/Our-Programs", label: "Our Programs" },
+    { href: "/Partners", label: "Partners & Careers" },
+    { href: "/Alumni", label: "Alumni" },
+    { href: "/Admission", label: "Admission" },
   ];
 
   return (

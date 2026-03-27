@@ -1,146 +1,166 @@
 "use client";
 
 import Image from "next/image";
-import { Phone, Mail, ArrowRight } from "lucide-react";
-import { useState } from "react";
+import { 
+  FaFacebookF, 
+  FaInstagram, 
+  FaPhoneAlt, 
+  FaEnvelope,
+  FaMapMarkerAlt
+} from "react-icons/fa";
+import { MdPhone, MdEmail, MdLocationOn } from "react-icons/md";
+
 export default function Footer() {
-  const [leadOpen, setLeadOpen] = useState(false);
-  const [eventDate, setEventDate] = useState("");
-  const [submittedDate, setSubmittedDate] = useState("");
-
-  const handleDateSubmit = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter" && eventDate.trim() !== "") {
-      setSubmittedDate(eventDate);
-      setLeadOpen(true);
+  const currentYear = new Date().getFullYear();
+  
+  const socialLinks = [
+    { 
+      icon: FaFacebookF, 
+      href: "https://facebook.com/asha", 
+      label: "Facebook",
+      color: "hover:bg-[#1877f2]"
+    },
+    { 
+      icon: FaInstagram, 
+      href: "https://instagram.com/asha", 
+      label: "Instagram",
+      color: "hover:bg-gradient-to-br hover:from-[#f58529] hover:via-[#dd2a7b] hover:to-[#8134af]"
+    },
+    { 
+      icon: FaPhoneAlt, 
+      href: "tel:+1234567890", 
+      label: "Phone",
+      color: "hover:bg-[#25D366]"
+    },
+    { 
+      icon: FaEnvelope, 
+      href: "mailto:info@asha.edu.ph", 
+      label: "Email",
+      color: "hover:bg-[#EA4335]"
     }
-  };
+  ];
 
-  const handleArrowClick = () => {
-    if (eventDate.trim() !== "") {
-      setSubmittedDate(eventDate);
-      setLeadOpen(true);
-    }
-  };
+  const contactInfo = [
+    { icon: FaMapMarkerAlt, text: "Room 504, Brittany Hotel, BGC", link: null },
+    { icon: MdPhone, text: "+63 2 1234 5678", link: "tel:+63212345678" },
+    { icon: MdEmail, text: "info@asha.edu.ph", link: "mailto:info@asha.edu.ph" }
+  ];
 
-  const handleClose = () => {
-    setLeadOpen(false);
-    // Optional: Clear the date after closing
-    // setEventDate("");
-  };
+  const quickLinks = [
+    { name: "About Us", href: "/About" },
+    { name: "Programs", href: "/Our-Offerings" },
+    { name: "Admissions", href: "/Admission" },
+  ];
 
   return (
-    <footer className="font-jost w-full bg-black text-white py-6 md:py-8">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-8 flex flex-col md:flex-row justify-between items-start gap-6 md:gap-0">
+    <footer className="w-full bg-gradient-to-r from-[#921A1B] to-[#6e5f5f] text-white">
+      <div className="max-w-7xl mx-auto px-6 py-12">
         
-        {/* LEFT - fixed width */}
-        <div className="flex flex-col gap-2 md:gap-2 w-full md:w-auto md:min-w-[300px]">
-          {/* Logo - reduced size */}
-          <div className="relative w-[200px] md:w-[300px] h-auto">
-            <Image
-              src="/MainLogo.png"
-              alt="Cravings Logo"
-              width={400}
-              height={126}
-              className="object-contain w-full h-auto"
-              priority={false}
-            />
-          </div>
-
-          <p className="text-xs md:text-sm text-white/80 md:text-white">
-            © 2026 Cravings Catering Group.<br className="md:hidden" /> All rights reserved.
-          </p>
-        </div>
-
-        {/* RIGHT - 30% wider */}
-        <div className="flex flex-col gap-4 md:gap-5 w-full md:w-[520px] md:max-w-[520px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           
-          {/* Date Section */}
-          <div className="w-full">
-            <p className="text-base md:text-lg mb-1 md:mb-1.5">
-              When's the special day?
-            </p>
-
-            <div className="text-sm md:text-base flex items-center border-b border-gray-400 pb-1">
-              <input
-                type="text"
-                placeholder="Event Date here"
-                value={eventDate}
-                onChange={(e) => setEventDate(e.target.value)}
-                onKeyDown={handleDateSubmit}
-                className="bg-transparent outline-none text-gray-300 placeholder-gray-400 w-full py-0.5"
-              />
-              <button 
-                onClick={handleArrowClick}
-                className="focus:outline-none"
-                aria-label="Submit date"
-              >
-                <ArrowRight 
-                  size={14} 
-                  className={`ml-1.5 flex-shrink-0 transition-colors ${
-                    eventDate.trim() !== "" 
-                      ? "text-[#FF8400] cursor-pointer hover:text-orange-400" 
-                      : "text-gray-500"
-                  }`} 
-                />
-              </button>
-            </div>
+          {/* COLUMN 1 - Logo and Description */}
+          <div className="space-y-4">
+            <Image
+              src="/Landing/Logo.png"
+              alt="ASHA Logo - Asian School for Hospitality Arts"
+              width={160}
+              height={60}
+              className="object-contain brightness-0 invert"
+              priority
+            />
             
-            {/* Optional: Show preview of what will be sent */}
-            {eventDate.trim() !== "" && (
-              <p className="text-xs text-gray-400 mt-1">
-                Will open form with: &quot;{eventDate}&quot;
-              </p>
-            )}
+            <p className="text-sm leading-relaxed opacity-90">
+              Asian School for Hospitality Arts (ASHA) is dedicated to 
+              shaping future leaders in the hospitality industry through 
+              excellence in education and hands-on training.
+            </p>
           </div>
 
-          {/* Contact Section */}
-          <div className="flex flex-col gap-2">
-            <p className="text-base md:text-lg font-medium">
-              Get in touch
-            </p>
+          {/* COLUMN 2 - Quick Links */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold tracking-wide uppercase">
+              Quick Links
+            </h3>
+            
+            <ul className="space-y-2">
+              {quickLinks.map((link, index) => (
+                <li key={index}>
+                  <a 
+                    href={link.href}
+                    className="text-sm opacity-90 hover:opacity-100 hover:translate-x-1 transition-all inline-block"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-            {/* Social Icons with correct links */}
-            <div className="flex gap-3 md:gap-4">
-              <a 
-                href="https://web.facebook.com/profile.php?id=61566411753625"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-[#FF8400] flex items-center justify-center hover:bg-orange-600 transition-colors active:scale-95"
-                aria-label="Facebook"
-              >
-                <Phone size={16} className="md:size-[18px]" />
-              </a>
-
-              <a 
-                href="https://www.instagram.com/cravingsphils/?hl=en"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-[#FF8400] flex items-center justify-center hover:bg-orange-600 transition-colors active:scale-95"
-                aria-label="Instagram"
-              >
-                <Mail size={16} className="md:size-[18px]" />
-              </a>
-
-              <a 
-                href="tel:09626281582"
-                className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-[#FF8400] flex items-center justify-center hover:bg-orange-600 transition-colors active:scale-95"
-                aria-label="Phone"
-                title="Call 0962 628 1582"
-              >
-                <Phone size={16} className="md:size-[18px]" />
-              </a>
-
-              <a 
-                href="mailto:wecater@cravingsgroup.com"
-                className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-[#FF8400] flex items-center justify-center hover:bg-orange-600 transition-colors active:scale-95"
-                aria-label="Email"
-                title="Email wecater@cravingsgroup.com"
-              >
-                <Mail size={16} className="md:size-[18px]" />
-              </a>
+          {/* COLUMN 3 - Contact Information */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold tracking-wide uppercase">
+              Contact Us
+            </h3>
+            
+            <div className="space-y-3">
+              {contactInfo.map((item, index) => {
+                const Icon = item.icon;
+                const content = (
+                  <>
+                    <Icon size={18} className="flex-shrink-0" />
+                    <span className="text-sm opacity-90">{item.text}</span>
+                  </>
+                );
+                
+                return (
+                  <div key={index} className="flex items-center gap-3">
+                    {item.link ? (
+                      <a href={item.link} className="flex items-center gap-3 hover:opacity-100 transition-opacity">
+                        {content}
+                      </a>
+                    ) : (
+                      <div className="flex items-center gap-3">
+                        {content}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
+
+          {/* COLUMN 4 - Social Media & Newsletter */}
+          <div className="space-y-6">
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold tracking-wide uppercase">
+                Follow Us
+              </h3>
+              
+              <div className="flex gap-3">
+                {socialLinks.map((social, index) => {
+                  const Icon = social.icon;
+                  return (
+                    <a
+                      key={index}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={social.label}
+                      className={`w-10 h-10 rounded-full bg-white/20 flex items-center justify-center 
+                        hover:scale-110 transition-all duration-300 ${social.color} hover:text-white`}
+                    >
+                      <Icon size={18} />
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+
+          </div>
+
         </div>
+
+
       </div>
     </footer>
   );
