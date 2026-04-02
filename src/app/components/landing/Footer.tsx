@@ -4,11 +4,13 @@ import Image from "next/image";
 import { 
   FaFacebookF, 
   FaInstagram, 
+  FaLinkedinIn,
   FaPhoneAlt, 
   FaEnvelope,
   FaMapMarkerAlt
 } from "react-icons/fa";
 import { MdPhone, MdEmail, MdLocationOn } from "react-icons/md";
+import { FaTiktok } from "react-icons/fa";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -16,27 +18,27 @@ export default function Footer() {
   const socialLinks = [
     { 
       icon: FaFacebookF, 
-      href: "https://facebook.com/asha", 
+      href: "https://www.facebook.com/ashaschool/", 
       label: "Facebook",
       color: "hover:bg-[#1877f2]"
     },
     { 
       icon: FaInstagram, 
-      href: "https://instagram.com/asha", 
+      href: "https://www.instagram.com/ashaschoolph/", 
       label: "Instagram",
       color: "hover:bg-gradient-to-br hover:from-[#f58529] hover:via-[#dd2a7b] hover:to-[#8134af]"
     },
     { 
-      icon: FaPhoneAlt, 
-      href: "tel:+1234567890", 
-      label: "Phone",
-      color: "hover:bg-[#25D366]"
+      icon: FaTiktok, 
+      href: "https://www.tiktok.com/@ashaschoolph", 
+      label: "TikTok",
+      color: "hover:bg-[#000000]"
     },
     { 
-      icon: FaEnvelope, 
-      href: "mailto:info@asha.edu.ph", 
-      label: "Email",
-      color: "hover:bg-[#EA4335]"
+      icon: FaLinkedinIn, 
+      href: "https://www.linkedin.com/school/asian-school-of-hospitality-arts/", 
+      label: "LinkedIn",
+      color: "hover:bg-[#0A66C2]"
     }
   ];
 
@@ -93,6 +95,16 @@ export default function Footer() {
                   </a>
                 </li>
               ))}
+              <li>
+                <a 
+                  href="https://asha.edu.ph/about/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm opacity-90 hover:opacity-100 hover:translate-x-1 transition-all inline-block"
+                >
+                  Website
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -129,14 +141,14 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* COLUMN 4 - Social Media & Newsletter */}
+          {/* COLUMN 4 - Social Media */}
           <div className="space-y-6">
             <div className="space-y-4">
               <h3 className="text-lg font-semibold tracking-wide uppercase">
                 Follow Us
               </h3>
               
-              <div className="flex gap-3">
+              <div className="flex gap-3 flex-wrap">
                 {socialLinks.map((social, index) => {
                   const Icon = social.icon;
                   return (
@@ -156,10 +168,15 @@ export default function Footer() {
               </div>
             </div>
 
+            {/* Optional: Copyright text */}
+            <div className="pt-4">
+              <p className="text-xs opacity-70">
+                © {currentYear} ASHA. All rights reserved.
+              </p>
+            </div>
           </div>
 
         </div>
-
 
       </div>
     </footer>

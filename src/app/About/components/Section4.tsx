@@ -11,12 +11,12 @@ export default function Section4() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.unobserve(entry.target); // Stop observing once animated
+          observer.unobserve(entry.target);
         }
       },
       {
-        threshold: 0.8, // Trigger when 20% of the element is visible
-        rootMargin: "0px 0px -50px 0px", // Small offset for better timing
+        threshold: 0.8,
+        rootMargin: "0px 0px -50px 0px",
       }
     );
 
@@ -31,7 +31,7 @@ export default function Section4() {
     };
   }, []);
 
-  // New icons data for the four benefits
+  // More intuitive icons for each benefit
   const benefits = [
     {
       title: "Industry Ready",
@@ -45,8 +45,11 @@ export default function Section4() {
           viewBox="0 0 24 24"
           style={{ color: 'rgb(146, 26, 27)' }}
         >
-          <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" strokeLinecap="round" />
-          <path d="M16 2v4h4" strokeLinecap="round" />
+          {/* Briefcase + Checkmark - symbolizes job-ready skills */}
+          <path d="M20 7h-4.18A3 3 0 0013 4h-2a3 3 0 00-2.82 3H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z" strokeLinecap="round" />
+          <path d="M16 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" strokeLinecap="round" />
+          <path d="M17 9l-5 5-3-3" strokeLinecap="round" strokeLinejoin="round" />
+          <circle cx="12" cy="9" r="1" fill="currentColor" />
         </svg>
       )
     },
@@ -62,7 +65,12 @@ export default function Section4() {
           viewBox="0 0 24 24"
           style={{ color: 'rgb(146, 26, 27)' }}
         >
-          <path d="M12 8v4l3 3M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" strokeLinecap="round" />
+          {/* Clock + Calendar + Play - represents flexible scheduling */}
+          <path d="M12 8v4l2.5 2.5" strokeLinecap="round" />
+          <circle cx="12" cy="12" r="9" strokeLinecap="round" />
+          <path d="M5 3L3 5" strokeLinecap="round" />
+          <path d="M19 3l2 2" strokeLinecap="round" />
+          <path d="M12 2v2" strokeLinecap="round" />
         </svg>
       )
     },
@@ -78,10 +86,9 @@ export default function Section4() {
           viewBox="0 0 24 24"
           style={{ color: 'rgb(146, 26, 27)' }}
         >
-          <path d="M21 13.255A9 9 0 1112 3a9 9 0 019 9z" strokeLinecap="round" />
-          <path d="M9 10h.01M15 10h.01M12 14h.01" strokeLinecap="round" />
-          <path d="M12 14v4" strokeLinecap="round" />
-          <path d="M12 18a2 2 0 100-4 2 2 0 000 4z" strokeLinecap="round" />
+          {/* Tools + Gears - represents hands-on practical work */}
+          <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" strokeLinecap="round" />
+          <path d="M3 21l2-2" strokeLinecap="round" />
         </svg>
       )
     },
@@ -97,10 +104,20 @@ export default function Section4() {
           viewBox="0 0 24 24"
           style={{ color: 'rgb(146, 26, 27)' }}
         >
-          <path d="M3 12h3l3-9 3 18 3-9h3" strokeLinecap="round" />
-          <path d="M20 12h2" strokeLinecap="round" />
-          <path d="M20 8h2" strokeLinecap="round" />
-          <path d="M20 16h2" strokeLinecap="round" />
+          {/* Network nodes + Connections - represents professional networking */}
+          <circle cx="12" cy="12" r="2.5" strokeLinecap="round" />
+          <circle cx="5" cy="5" r="2.5" strokeLinecap="round" />
+          <circle cx="19" cy="5" r="2.5" strokeLinecap="round" />
+          <circle cx="5" cy="19" r="2.5" strokeLinecap="round" />
+          <circle cx="19" cy="19" r="2.5" strokeLinecap="round" />
+          <path d="M7.5 7.5L9.5 9.5" strokeLinecap="round" />
+          <path d="M14.5 9.5L16.5 7.5" strokeLinecap="round" />
+          <path d="M9.5 14.5L7.5 16.5" strokeLinecap="round" />
+          <path d="M16.5 16.5L14.5 14.5" strokeLinecap="round" />
+          <path d="M12 14.5V19.5" strokeLinecap="round" />
+          <path d="M12 4.5V9.5" strokeLinecap="round" />
+          <path d="M4.5 12H9.5" strokeLinecap="round" />
+          <path d="M14.5 12H19.5" strokeLinecap="round" />
         </svg>
       )
     }
