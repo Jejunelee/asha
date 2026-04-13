@@ -7,153 +7,248 @@ const yourEmail = process.env.YOUR_EMAIL;
 
 // Log environment check (only in development)
 if (process.env.NODE_ENV === 'development') {
-  console.log('Resend API Key exists:', !!resendApiKey);
-  console.log('Your email exists:', !!yourEmail);
+  console.log('✅ Resend API Key exists:', !!resendApiKey);
+  console.log('✅ Your email exists:', !!yourEmail);
+  
+  if (!resendApiKey) console.error('❌ RESEND_API_KEY is missing from environment variables');
+  if (!yourEmail) console.error('❌ YOUR_EMAIL is missing from environment variables');
 }
 
-if (!resendApiKey) {
-  console.error('RESEND_API_KEY is missing from environment variables');
-}
-
-if (!yourEmail) {
-  console.error('YOUR_EMAIL is missing from environment variables');
-}
-
-const resend = new Resend(resendApiKey);
+// Initialize Resend only if API key exists
+const resend = resendApiKey ? new Resend(resendApiKey) : null;
 
 export async function POST(request: NextRequest) {
   try {
-    // Parse the request body
+    // Parse the request body - MATCHING Lead.tsx form fields
     const body = await request.json();
-    const { interest, startDate, fullName, email, mobile, note } = body;
+    const { firstName, surname, email, phone, course } = body;
 
     // Log the received data (development only)
     if (process.env.NODE_ENV === 'development') {
-      console.log('Received Join Us form data:', { interest, startDate, fullName, email, mobile, note });
+      console.log('📝 Received Lead form data:', { 
+        firstName, 
+        surname, 
+        email, 
+        phone, 
+        course 
+      });
     }
 
-    // Basic validation
-    if (!interest || !startDate || !fullName || !email || !mobile) {
+    // Basic validation - MATCHING Lead.tsx validations
+    if (!firstName?.trim() || !surname?.trim() || !email?.trim() || !phone?.trim() || !course?.trim()) {
       return NextResponse.json(
-        { error: 'All required fields must be filled out' },
+        { error: 'All fields are required. Please fill out the complete form.' },
+        { status: 400 }
+      );
+    }
+
+    // Validate name lengths
+    if (firstName.trim().length < 2 || surname.trim().length < 2) {
+      return NextResponse.json(
+        { error: 'First name and surname must be at least 2 characters each.' },
         { status: 400 }
       );
     }
 
     // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
+    const emailRegex = /^[^\s@]+@([^\s@]+\.)+[^\s@]+$/;
+    if (!emailRegex.test(email.trim())) {
       return NextResponse.json(
-        { error: 'Invalid email format' },
+        { error: 'Please provide a valid email address.' },
+        { status: 400 }
+      );
+    }
+
+    // Validate phone (basic validation)
+    const phoneRegex = /^[\+\d\s\(\)-]{8,20}$/;
+    if (!phoneRegex.test(phone.trim()) || phone.trim().length < 8) {
+      return NextResponse.json(
+        { error: 'Please provide a valid phone number (minimum 8 digits).' },
+        { status: 400 }
+      );
+    }
+
+    // Validate course
+    if (course.trim().length < 3) {
+      return NextResponse.json(
+        { error: 'Please provide a more specific course inquiry (minimum 3 characters).' },
         { status: 400 }
       );
     }
 
     // Check if Resend is properly initialized
-    if (!resendApiKey) {
+    if (!resend || !resendApiKey) {
+      console.error('❌ Resend not configured properly');
+      
+      // In development, return success without sending email
+      if (process.env.NODE_ENV === 'development') {
+        console.log('⚠️ Development mode: Email not sent, but returning success');
+        return NextResponse.json(
+          { 
+            success: true, 
+            message: 'Development mode: Form submitted successfully (email not sent)',
+            data: { id: 'dev-mode' }
+          },
+          { status: 200 }
+        );
+      }
+      
       return NextResponse.json(
-        { error: 'Email service is not configured properly' },
+        { error: 'Email service is not configured properly. Please contact support.' },
         { status: 500 }
       );
     }
 
     // Send email using Resend
+    const fullName = `${firstName} ${surname}`;
+    
     const { data, error } = await resend.emails.send({
-      from: 'CCA Connect NoReply <send@ccaconnect.co>', // Use Resend's default domain for testing
-      to: [yourEmail || 'leejejune02@gmail.com'], // Fallback for testing
+      from: 'Course Inquiry <onboarding@resend.dev>', // Use Resend's default domain for testing
+      to: [yourEmail || 'admin@yourdomain.com'], // Your receiving email
       replyTo: email,
-      subject: `New Join Us Inquiry: ${fullName} is interested in ${interest}`,
+      subject: `🎓 New Course Inquiry: ${fullName} is interested in ${course}`,
       html: `
         <!DOCTYPE html>
         <html>
         <head>
           <meta charset="utf-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>New Join Us Inquiry from Cravings</title>
+          <title>New Course Inquiry</title>
+          <style>
+            body {
+              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+              line-height: 1.6;
+              color: #333;
+              max-width: 600px;
+              margin: 0 auto;
+              padding: 20px;
+            }
+            .header {
+              background: linear-gradient(135deg, #7b1e1e 0%, #641818 100%);
+              color: white;
+              padding: 30px;
+              border-radius: 12px 12px 0 0;
+              text-align: center;
+            }
+            .content {
+              background: #f9f9f9;
+              padding: 30px;
+              border-radius: 0 0 12px 12px;
+              border: 1px solid #eee;
+              border-top: none;
+            }
+            .info-card {
+              background: white;
+              padding: 20px;
+              border-radius: 8px;
+              margin-bottom: 20px;
+              border-left: 4px solid #7b1e1e;
+              box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            }
+            .button {
+              display: inline-block;
+              padding: 12px 24px;
+              text-decoration: none;
+              border-radius: 8px;
+              margin: 5px;
+              font-weight: 500;
+            }
+            .button-email {
+              background: #7b1e1e;
+              color: white;
+            }
+            .button-phone {
+              background: #4CAF50;
+              color: white;
+            }
+            .footer {
+              text-align: center;
+              margin-top: 30px;
+              padding-top: 20px;
+              border-top: 1px solid #eee;
+              color: #666;
+              font-size: 12px;
+            }
+          </style>
         </head>
-        <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-          <div style="background: linear-gradient(135deg, #AFCFE4 0%, #9fb8cc 100%); color: #1a2b3c; padding: 30px; border-radius: 12px 12px 0 0; text-align: center;">
-            <h1 style="margin: 0; font-size: 24px;">🤝 New Join Us Inquiry!</h1>
-            <p style="margin: 10px 0 0; opacity: 0.9;">Someone wants to connect with Cravings</p>
+        <body>
+          <div class="header">
+            <h1 style="margin: 0; font-size: 24px;">📚 New Course Inquiry!</h1>
+            <p style="margin: 10px 0 0; opacity: 0.9;">A potential student is interested in your courses</p>
           </div>
           
-          <div style="background: #f9f9f9; padding: 30px; border-radius: 0 0 12px 12px; border: 1px solid #eee; border-top: none;">
-            <div style="background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #AFCFE4; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-              <p><strong style="color: #1a2b3c;">🎯 Interest:</strong> ${interest}</p>
-              <p><strong style="color: #1a2b3c;">📅 Intended Start Date:</strong> ${new Date(startDate).toLocaleDateString()}</p>
-              <p><strong style="color: #1a2b3c;">👤 Full Name:</strong> ${fullName}</p>
-              <p><strong style="color: #1a2b3c;">📧 Email:</strong> <a href="mailto:${email}" style="color: #0a0a0a;">${email}</a></p>
-              <p><strong style="color: #1a2b3c;">📱 Mobile:</strong> <a href="tel:${mobile}" style="color: #0a0a0a;">${mobile}</a></p>
-              ${note ? `
-                <p><strong style="color: #1a2b3c;">📝 Additional Notes:</strong></p>
-                <div style="margin-top: 8px; background: #f5f5f5; padding: 15px; border-radius: 6px; white-space: pre-line;">
-                  ${note.replace(/\n/g, '<br>')}
-                </div>
-              ` : ''}
+          <div class="content">
+            <div class="info-card">
+              <h2 style="margin-top: 0; color: #7b1e1e;">Student Information</h2>
+              
+              <p><strong style="color: #333;">👤 Full Name:</strong> ${fullName}</p>
+              <p><strong style="color: #333;">📧 Email:</strong> <a href="mailto:${email}" style="color: #7b1e1e;">${email}</a></p>
+              <p><strong style="color: #333;">📱 Phone:</strong> <a href="tel:${phone}" style="color: #7b1e1e;">${phone}</a></p>
+              <p><strong style="color: #333;">🎯 Course Interest:</strong> <span style="background: #f0f0f0; padding: 4px 8px; border-radius: 4px;">${course}</span></p>
             </div>
             
-            <div style="text-align: center;">
-              <a href="mailto:${email}" style="display: inline-block; background: #AFCFE4; color: #1a2b3c; padding: 10px 20px; text-decoration: none; border-radius: 6px; margin: 5px; font-weight: 500;">✉️ Reply to ${fullName}</a>
-              <a href="tel:${mobile}" style="display: inline-block; background: #4CAF50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 6px; margin: 5px; font-weight: 500;">📱 Call Now</a>
+            <div style="text-align: center; margin-top: 20px;">
+              <a href="mailto:${email}" class="button button-email">✉️ Reply to Student</a>
+              <a href="tel:${phone}" class="button button-phone">📞 Call Now</a>
             </div>
           </div>
           
-          <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; color: #666; font-size: 12px;">
-            <p>This inquiry was submitted from your Cravings website Join Us form.</p>
-            <p>Time received: ${new Date().toLocaleString()}</p>
+          <div class="footer">
+            <p>This inquiry was submitted from your website's course inquiry form.</p>
+            <p>📅 Time received: ${new Date().toLocaleString()}</p>
           </div>
         </body>
         </html>
       `,
       text: `
-NEW JOIN US INQUIRY FROM CRAVINGS WEBSITE
+NEW COURSE INQUIRY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Interest: ${interest}
-Intended Start Date: ${new Date(startDate).toLocaleDateString()}
-Full Name: ${fullName}
+Student Information:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Name: ${fullName}
 Email: ${email}
-Mobile: ${mobile}
-${note ? `\nAdditional Notes:\n${note}` : ''}
+Phone: ${phone}
+Course Interest: ${course}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
----
 This inquiry was submitted at ${new Date().toLocaleString()}
+
+Reply to student: ${email}
+Call student: ${phone}
       `,
     });
 
     // Handle Resend errors
     if (error) {
-      console.error('Resend error:', error);
+      console.error('❌ Resend error:', error);
       return NextResponse.json(
-        { error: `Failed to send inquiry: ${error.message}` },
+        { error: `Failed to send inquiry: ${error.message}. Please try again later.` },
         { status: 500 }
       );
     }
 
     // Success response
+    console.log('✅ Email sent successfully:', data);
     return NextResponse.json(
       { 
         success: true,
-        message: 'Inquiry sent successfully! You will also receive free training material.',
+        message: '✨ Thank you! Your inquiry has been sent. Our team will contact you shortly.',
         data: data
       },
       { status: 200 }
     );
 
   } catch (error: any) {
-    console.error('Server error:', error);
+    console.error('❌ Server error:', error);
     
     // Return a proper JSON response even for unexpected errors
     return NextResponse.json(
       { 
-        error: 'Internal server error',
+        error: 'Unable to process your request. Please try again later.',
         details: process.env.NODE_ENV === 'development' ? error.message : undefined
       },
       { status: 500 }
     );
   }
-}
-
-// Add OPTIONS method for CORS if needed
-export async function OPTIONS() {
-  return NextResponse.json({}, { status: 200 });
 }

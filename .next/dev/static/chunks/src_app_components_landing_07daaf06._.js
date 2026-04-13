@@ -1164,12 +1164,21 @@ function Lead() {
             message: ''
         });
         try {
-            // Simulate API call - replace with actual API endpoint
-            await new Promise((resolve)=>setTimeout(resolve, 1500));
+            const response = await fetch('/api/send-mail', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+            const result = await response.json();
+            if (!response.ok) {
+                throw new Error(result.error || 'Submission failed');
+            }
             // Success
             setSubmitStatus({
                 type: 'success',
-                message: '✨ Thank you! Your inquiry has been sent. Our team will contact you shortly.'
+                message: result.message || '✨ Thank you! Your inquiry has been sent. Our team will contact you shortly.'
             });
             // Reset form
             setFormData({
@@ -1190,7 +1199,7 @@ function Lead() {
             // Error
             setSubmitStatus({
                 type: 'error',
-                message: '⚠️ Submission failed. Please try again later.'
+                message: error instanceof Error ? error.message : '⚠️ Submission failed. Please try again later.'
             });
             // Clear error message after 5 seconds
             setTimeout(()=>{
@@ -1204,45 +1213,45 @@ function Lead() {
         }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-        className: "w-full py-12 md:py-20 lg:py-28 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden",
+        className: "w-full py-20 md:py-24 lg:py-28 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#7b1e1e]/20 via-[#7b1e1e]/60 to-[#7b1e1e]/20"
             }, void 0, false, {
                 fileName: "[project]/src/app/components/landing/Lead.tsx",
-                lineNumber: 162,
+                lineNumber: 173,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute -top-40 -right-40 w-80 h-80 bg-[#7b1e1e]/5 rounded-full blur-3xl"
             }, void 0, false, {
                 fileName: "[project]/src/app/components/landing/Lead.tsx",
-                lineNumber: 163,
+                lineNumber: 174,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute -bottom-40 -left-40 w-80 h-80 bg-[#7b1e1e]/5 rounded-full blur-3xl"
             }, void 0, false, {
                 fileName: "[project]/src/app/components/landing/Lead.tsx",
-                lineNumber: 164,
+                lineNumber: 175,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "max-w-7xl mx-auto px-4 md:px-8 lg:px-10 relative z-10",
+                className: "max-w-7xl mx-auto px-6 md:px-8 lg:px-10 relative z-10",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center",
+                    className: "grid md:grid-cols-2 gap-12 lg:gap-20 items-center",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "space-y-4 md:space-y-6 animate-fade-in-up",
+                            className: "space-y-6 animate-fade-in-up",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                        className: "font-jost text-3xl md:text-5xl lg:text-6xl font-bold text-[#1a0e0e] leading-[1.2] tracking-tight",
+                                        className: "font-jost text-4xl md:text-5xl lg:text-6xl font-bold text-[#1a0e0e] leading-[1.2] tracking-tight",
                                         children: [
                                             "Ready to build",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                 fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                lineNumber: 174,
+                                                lineNumber: 185,
                                                 columnNumber: 17
                                             }, this),
                                             "your ",
@@ -1251,7 +1260,7 @@ function Lead() {
                                                 children: [
                                                     "dreams",
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                                        className: "absolute -bottom-2 left-0 w-full h-1.5 md:h-2",
+                                                        className: "absolute -bottom-2 left-0 w-full h-2",
                                                         viewBox: "0 0 200 8",
                                                         fill: "none",
                                                         xmlns: "http://www.w3.org/2000/svg",
@@ -1263,60 +1272,60 @@ function Lead() {
                                                             strokeDasharray: "4 3"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                            lineNumber: 183,
+                                                            lineNumber: 194,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                        lineNumber: 177,
+                                                        lineNumber: 188,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                lineNumber: 175,
+                                                lineNumber: 186,
                                                 columnNumber: 22
                                             }, this),
                                             "?"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                        lineNumber: 172,
+                                        lineNumber: 183,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                    lineNumber: 171,
+                                    lineNumber: 182,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    className: "font-jost text-gray-600 text-base md:text-lg leading-relaxed max-w-md",
+                                    className: "font-jost text-gray-600 text-lg leading-relaxed max-w-md",
                                     children: "Take the first step toward your future. Fill out the form and our expert advisors will guide you through the journey."
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                    lineNumber: 195,
+                                    lineNumber: 206,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/landing/Lead.tsx",
-                            lineNumber: 170,
+                            lineNumber: 181,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
                             onSubmit: handleSubmit,
-                            className: "bg-white rounded-2xl md:rounded-3xl shadow-2xl p-5 md:p-8 lg:p-10 border border-gray-100 transition-all duration-300 hover:shadow-3xl space-y-5 md:space-y-8 transform hover:scale-[1.01]",
+                            className: "bg-white rounded-3xl shadow-2xl p-8 md:p-10 border border-gray-100 transition-all duration-300 hover:shadow-3xl space-y-8 transform hover:scale-[1.01]",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6",
+                                    className: "grid grid-cols-1 sm:grid-cols-2 gap-6",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                    className: "font-jost text-sm md:text-base font-semibold text-gray-700 flex items-center gap-1.5 mb-1.5 md:mb-2",
+                                                    className: "font-jost text-base font-semibold text-gray-700 flex items-center gap-1.5 mb-2",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                                            className: "w-4 h-4 md:w-5 md:h-5 text-[#7b1e1e]/70",
+                                                            className: "w-5 h-5 text-[#7b1e1e]/70",
                                                             fill: "none",
                                                             stroke: "currentColor",
                                                             viewBox: "0 0 24 24",
@@ -1327,19 +1336,19 @@ function Lead() {
                                                                 d: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                                lineNumber: 208,
+                                                                lineNumber: 219,
                                                                 columnNumber: 21
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                            lineNumber: 207,
+                                                            lineNumber: 218,
                                                             columnNumber: 19
                                                         }, this),
                                                         "First Name"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                    lineNumber: 206,
+                                                    lineNumber: 217,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1348,10 +1357,10 @@ function Lead() {
                                                     value: formData.firstName,
                                                     onChange: handleInputChange,
                                                     placeholder: "e.g. James",
-                                                    className: `font-jost w-full px-4 md:px-5 py-3 md:py-4 text-sm md:text-base rounded-lg md:rounded-xl border transition-all duration-200 outline-none focus:ring-2 placeholder:text-gray-400 text-black ${errors.firstName ? 'border-red-400 bg-red-50 focus:border-red-400 focus:ring-red-200' : 'border-gray-200 bg-gray-50/50 focus:bg-white focus:border-[#7b1e1e] focus:ring-[#7b1e1e]/20'}`
+                                                    className: `font-jost w-full px-5 py-4 text-base rounded-xl border transition-all duration-200 outline-none focus:ring-2 placeholder:text-gray-400 text-black ${errors.firstName ? 'border-red-400 bg-red-50 focus:border-red-400 focus:ring-red-200' : 'border-gray-200 bg-gray-50/50 focus:bg-white focus:border-[#7b1e1e] focus:ring-[#7b1e1e]/20'}`
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                    lineNumber: 212,
+                                                    lineNumber: 223,
                                                     columnNumber: 17
                                                 }, this),
                                                 errors.firstName && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1359,22 +1368,22 @@ function Lead() {
                                                     children: errors.firstName
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                    lineNumber: 225,
+                                                    lineNumber: 236,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                            lineNumber: 205,
+                                            lineNumber: 216,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                    className: "font-jost text-sm md:text-base font-semibold text-gray-700 flex items-center gap-1.5 mb-1.5 md:mb-2",
+                                                    className: "font-jost text-base font-semibold text-gray-700 flex items-center gap-1.5 mb-2",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                                            className: "w-4 h-4 md:w-5 md:h-5 text-[#7b1e1e]/70",
+                                                            className: "w-5 h-5 text-[#7b1e1e]/70",
                                                             fill: "none",
                                                             stroke: "currentColor",
                                                             viewBox: "0 0 24 24",
@@ -1385,19 +1394,19 @@ function Lead() {
                                                                 d: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                                lineNumber: 232,
+                                                                lineNumber: 243,
                                                                 columnNumber: 21
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                            lineNumber: 231,
+                                                            lineNumber: 242,
                                                             columnNumber: 19
                                                         }, this),
                                                         "Surname"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                    lineNumber: 230,
+                                                    lineNumber: 241,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1406,10 +1415,10 @@ function Lead() {
                                                     value: formData.surname,
                                                     onChange: handleInputChange,
                                                     placeholder: "e.g. Carter",
-                                                    className: `font-jost w-full px-4 md:px-5 py-3 md:py-4 text-sm md:text-base rounded-lg md:rounded-xl border transition-all duration-200 outline-none focus:ring-2 placeholder:text-gray-400 text-black ${errors.surname ? 'border-red-400 bg-red-50 focus:border-red-400 focus:ring-red-200' : 'border-gray-200 bg-gray-50/50 focus:bg-white focus:border-[#7b1e1e] focus:ring-[#7b1e1e]/20'}`
+                                                    className: `font-jost w-full px-5 py-4 text-base rounded-xl border transition-all duration-200 outline-none focus:ring-2 placeholder:text-gray-400 text-black ${errors.surname ? 'border-red-400 bg-red-50 focus:border-red-400 focus:ring-red-200' : 'border-gray-200 bg-gray-50/50 focus:bg-white focus:border-[#7b1e1e] focus:ring-[#7b1e1e]/20'}`
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                    lineNumber: 236,
+                                                    lineNumber: 247,
                                                     columnNumber: 17
                                                 }, this),
                                                 errors.surname && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1417,31 +1426,31 @@ function Lead() {
                                                     children: errors.surname
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                    lineNumber: 249,
+                                                    lineNumber: 260,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                            lineNumber: 229,
+                                            lineNumber: 240,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                    lineNumber: 204,
+                                    lineNumber: 215,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6",
+                                    className: "grid grid-cols-1 sm:grid-cols-2 gap-6",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                    className: "font-jost text-sm md:text-base font-semibold text-gray-700 flex items-center gap-1.5 mb-1.5 md:mb-2",
+                                                    className: "font-jost text-base font-semibold text-gray-700 flex items-center gap-1.5 mb-2",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                                            className: "w-4 h-4 md:w-5 md:h-5 text-[#7b1e1e]/70",
+                                                            className: "w-5 h-5 text-[#7b1e1e]/70",
                                                             fill: "none",
                                                             stroke: "currentColor",
                                                             viewBox: "0 0 24 24",
@@ -1452,19 +1461,19 @@ function Lead() {
                                                                 d: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                                lineNumber: 259,
+                                                                lineNumber: 270,
                                                                 columnNumber: 21
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                            lineNumber: 258,
+                                                            lineNumber: 269,
                                                             columnNumber: 19
                                                         }, this),
                                                         "Email Address"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                    lineNumber: 257,
+                                                    lineNumber: 268,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1473,10 +1482,10 @@ function Lead() {
                                                     value: formData.email,
                                                     onChange: handleInputChange,
                                                     placeholder: "hello@example.com",
-                                                    className: `font-jost w-full px-4 md:px-5 py-3 md:py-4 text-sm md:text-base rounded-lg md:rounded-xl border transition-all duration-200 outline-none focus:ring-2 placeholder:text-gray-400 text-black ${errors.email ? 'border-red-400 bg-red-50 focus:border-red-400 focus:ring-red-200' : 'border-gray-200 bg-gray-50/50 focus:bg-white focus:border-[#7b1e1e] focus:ring-[#7b1e1e]/20'}`
+                                                    className: `font-jost w-full px-5 py-4 text-base rounded-xl border transition-all duration-200 outline-none focus:ring-2 placeholder:text-gray-400 text-black ${errors.email ? 'border-red-400 bg-red-50 focus:border-red-400 focus:ring-red-200' : 'border-gray-200 bg-gray-50/50 focus:bg-white focus:border-[#7b1e1e] focus:ring-[#7b1e1e]/20'}`
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                    lineNumber: 263,
+                                                    lineNumber: 274,
                                                     columnNumber: 17
                                                 }, this),
                                                 errors.email && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1484,22 +1493,22 @@ function Lead() {
                                                     children: errors.email
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                    lineNumber: 276,
+                                                    lineNumber: 287,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                            lineNumber: 256,
+                                            lineNumber: 267,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                    className: "font-jost text-sm md:text-base font-semibold text-gray-700 flex items-center gap-1.5 mb-1.5 md:mb-2",
+                                                    className: "font-jost text-base font-semibold text-gray-700 flex items-center gap-1.5 mb-2",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                                            className: "w-4 h-4 md:w-5 md:h-5 text-[#7b1e1e]/70",
+                                                            className: "w-5 h-5 text-[#7b1e1e]/70",
                                                             fill: "none",
                                                             stroke: "currentColor",
                                                             viewBox: "0 0 24 24",
@@ -1510,19 +1519,19 @@ function Lead() {
                                                                 d: "M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                                lineNumber: 283,
+                                                                lineNumber: 294,
                                                                 columnNumber: 21
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                            lineNumber: 282,
+                                                            lineNumber: 293,
                                                             columnNumber: 19
                                                         }, this),
                                                         "Contact Number"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                    lineNumber: 281,
+                                                    lineNumber: 292,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1531,10 +1540,10 @@ function Lead() {
                                                     value: formData.phone,
                                                     onChange: handleInputChange,
                                                     placeholder: "+1 (555) 000-9999",
-                                                    className: `font-jost w-full px-4 md:px-5 py-3 md:py-4 text-sm md:text-base rounded-lg md:rounded-xl border transition-all duration-200 outline-none focus:ring-2 placeholder:text-gray-400 text-black ${errors.phone ? 'border-red-400 bg-red-50 focus:border-red-400 focus:ring-red-200' : 'border-gray-200 bg-gray-50/50 focus:bg-white focus:border-[#7b1e1e] focus:ring-[#7b1e1e]/20'}`
+                                                    className: `font-jost w-full px-5 py-4 text-base rounded-xl border transition-all duration-200 outline-none focus:ring-2 placeholder:text-gray-400 text-black ${errors.phone ? 'border-red-400 bg-red-50 focus:border-red-400 focus:ring-red-200' : 'border-gray-200 bg-gray-50/50 focus:bg-white focus:border-[#7b1e1e] focus:ring-[#7b1e1e]/20'}`
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                    lineNumber: 287,
+                                                    lineNumber: 298,
                                                     columnNumber: 17
                                                 }, this),
                                                 errors.phone && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1542,29 +1551,29 @@ function Lead() {
                                                     children: errors.phone
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                    lineNumber: 300,
+                                                    lineNumber: 311,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                            lineNumber: 280,
+                                            lineNumber: 291,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                    lineNumber: 255,
+                                    lineNumber: 266,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "space-y-3 md:space-y-4",
+                                    className: "space-y-4",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                            className: "font-jost text-sm md:text-base font-semibold text-gray-700 flex items-center gap-1.5",
+                                            className: "font-jost text-base font-semibold text-gray-700 flex items-center gap-1.5",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                                    className: "w-4 h-4 md:w-5 md:h-5 text-[#7b1e1e]/70",
+                                                    className: "w-5 h-5 text-[#7b1e1e]/70",
                                                     fill: "none",
                                                     stroke: "currentColor",
                                                     viewBox: "0 0 24 24",
@@ -1575,23 +1584,23 @@ function Lead() {
                                                         d: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                        lineNumber: 309,
+                                                        lineNumber: 320,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                    lineNumber: 308,
+                                                    lineNumber: 319,
                                                     columnNumber: 17
                                                 }, this),
                                                 "Course Inquiry"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                            lineNumber: 307,
+                                            lineNumber: 318,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "flex flex-col sm:flex-row gap-3 md:gap-4",
+                                            className: "flex flex-col sm:flex-row gap-4",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "flex-1",
@@ -1602,10 +1611,10 @@ function Lead() {
                                                             value: formData.course,
                                                             onChange: handleInputChange,
                                                             placeholder: "e.g. Web Development, Data Science, UI/UX Design",
-                                                            className: `font-jost w-full px-4 md:px-5 py-3 md:py-4 text-sm md:text-base rounded-lg md:rounded-xl border transition-all duration-200 outline-none focus:ring-2 placeholder:text-gray-400 text-black ${errors.course ? 'border-red-400 bg-red-50 focus:border-red-400 focus:ring-red-200' : 'border-gray-200 bg-gray-50/50 focus:bg-white focus:border-[#7b1e1e] focus:ring-[#7b1e1e]/20'}`
+                                                            className: `font-jost w-full px-5 py-4 text-base rounded-xl border transition-all duration-200 outline-none focus:ring-2 placeholder:text-gray-400 text-black ${errors.course ? 'border-red-400 bg-red-50 focus:border-red-400 focus:ring-red-200' : 'border-gray-200 bg-gray-50/50 focus:bg-white focus:border-[#7b1e1e] focus:ring-[#7b1e1e]/20'}`
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                            lineNumber: 315,
+                                                            lineNumber: 326,
                                                             columnNumber: 19
                                                         }, this),
                                                         errors.course && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1613,23 +1622,23 @@ function Lead() {
                                                             children: errors.course
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                            lineNumber: 328,
+                                                            lineNumber: 339,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                    lineNumber: 314,
+                                                    lineNumber: 325,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                     type: "submit",
                                                     disabled: isSubmitting,
-                                                    className: "font-jost px-6 md:px-10 py-3 md:py-4 text-base md:text-lg rounded-lg md:rounded-xl bg-[#7b1e1e] text-white font-bold shadow-lg hover:bg-[#641818] hover:shadow-xl transform transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-[#7b1e1e]/40 active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:bg-[#7b1e1e] flex items-center justify-center gap-2 group min-w-[140px] md:min-w-[170px]",
+                                                    className: "font-jost px-10 py-4 text-lg rounded-xl bg-[#7b1e1e] text-white font-bold shadow-lg hover:bg-[#641818] hover:shadow-xl transform transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-[#7b1e1e]/40 active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:bg-[#7b1e1e] flex items-center justify-center gap-2 group min-w-[170px]",
                                                     children: isSubmitting ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                                                className: "animate-spin h-4 w-4 md:h-5 md:w-5",
+                                                                className: "animate-spin h-5 w-5",
                                                                 xmlns: "http://www.w3.org/2000/svg",
                                                                 fill: "none",
                                                                 viewBox: "0 0 24 24",
@@ -1643,7 +1652,7 @@ function Lead() {
                                                                         strokeWidth: "4"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                                        lineNumber: 339,
+                                                                        lineNumber: 350,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -1652,20 +1661,20 @@ function Lead() {
                                                                         d: "M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                                        lineNumber: 340,
+                                                                        lineNumber: 351,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                                lineNumber: 338,
+                                                                lineNumber: 349,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                 children: "Sending..."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                                lineNumber: 342,
+                                                                lineNumber: 353,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
@@ -1675,11 +1684,11 @@ function Lead() {
                                                                 children: "Submit Inquiry"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                                lineNumber: 346,
+                                                                lineNumber: 357,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                                                className: "w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform duration-200",
+                                                                className: "w-5 h-5 group-hover:translate-x-1 transition-transform duration-200",
                                                                 fill: "none",
                                                                 stroke: "currentColor",
                                                                 viewBox: "0 0 24 24",
@@ -1690,29 +1699,29 @@ function Lead() {
                                                                     d: "M14 5l7 7m0 0l-7 7m7-7H3"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                                    lineNumber: 348,
+                                                                    lineNumber: 359,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                                lineNumber: 347,
+                                                                lineNumber: 358,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                    lineNumber: 331,
+                                                    lineNumber: 342,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                            lineNumber: 313,
+                                            lineNumber: 324,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "font-jost text-[11px] md:text-xs text-gray-400 flex items-center gap-1 mt-1",
+                                            className: "font-jost text-xs text-gray-400 flex items-center gap-1 mt-1",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
                                                     className: "w-3 h-3",
@@ -1726,32 +1735,32 @@ function Lead() {
                                                         d: "M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                        lineNumber: 356,
+                                                        lineNumber: 367,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                    lineNumber: 355,
+                                                    lineNumber: 366,
                                                     columnNumber: 17
                                                 }, this),
                                                 "We'll never share your info. Privacy guaranteed."
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                            lineNumber: 354,
+                                            lineNumber: 365,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                    lineNumber: 306,
+                                    lineNumber: 317,
                                     columnNumber: 13
                                 }, this),
                                 submitStatus.type && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: `p-3 md:p-4 rounded-lg md:rounded-xl flex items-start gap-3 ${submitStatus.type === 'success' ? 'bg-green-50 text-green-800 border border-green-200' : 'bg-red-50 text-red-800 border border-red-200'}`,
+                                    className: `p-4 rounded-xl flex items-start gap-3 ${submitStatus.type === 'success' ? 'bg-green-50 text-green-800 border border-green-200' : 'bg-red-50 text-red-800 border border-red-200'}`,
                                     children: [
                                         submitStatus.type === 'success' ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                            className: "w-4 h-4 md:w-5 md:h-5 flex-shrink-0",
+                                            className: "w-5 h-5 flex-shrink-0",
                                             fill: "none",
                                             stroke: "currentColor",
                                             viewBox: "0 0 24 24",
@@ -1762,15 +1771,15 @@ function Lead() {
                                                 d: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                lineNumber: 371,
+                                                lineNumber: 382,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                            lineNumber: 370,
+                                            lineNumber: 381,
                                             columnNumber: 19
                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                            className: "w-4 h-4 md:w-5 md:h-5 flex-shrink-0",
+                                            className: "w-5 h-5 flex-shrink-0",
                                             fill: "none",
                                             stroke: "currentColor",
                                             viewBox: "0 0 24 24",
@@ -1781,43 +1790,43 @@ function Lead() {
                                                 d: "M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                lineNumber: 375,
+                                                lineNumber: 386,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                            lineNumber: 374,
+                                            lineNumber: 385,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "font-jost text-xs md:text-sm",
+                                            className: "font-jost text-sm",
                                             children: submitStatus.message
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                            lineNumber: 378,
+                                            lineNumber: 389,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                    lineNumber: 364,
+                                    lineNumber: 375,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/landing/Lead.tsx",
-                            lineNumber: 201,
+                            lineNumber: 212,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                    lineNumber: 167,
+                    lineNumber: 178,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/components/landing/Lead.tsx",
-                lineNumber: 166,
+                lineNumber: 177,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
@@ -1838,13 +1847,13 @@ function Lead() {
       `
             }, void 0, false, {
                 fileName: "[project]/src/app/components/landing/Lead.tsx",
-                lineNumber: 385,
+                lineNumber: 396,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/components/landing/Lead.tsx",
-        lineNumber: 160,
+        lineNumber: 171,
         columnNumber: 5
     }, this);
 }

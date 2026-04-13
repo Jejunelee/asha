@@ -118,13 +118,24 @@ export default function Lead() {
     setSubmitStatus({ type: null, message: '' });
 
     try {
-      // Simulate API call - replace with actual API endpoint
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      const response = await fetch('/api/send-mail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Submission failed');
+      }
       
       // Success
       setSubmitStatus({
         type: 'success',
-        message: '✨ Thank you! Your inquiry has been sent. Our team will contact you shortly.',
+        message: result.message || '✨ Thank you! Your inquiry has been sent. Our team will contact you shortly.',
       });
       
       // Reset form
@@ -144,7 +155,7 @@ export default function Lead() {
       // Error
       setSubmitStatus({
         type: 'error',
-        message: '⚠️ Submission failed. Please try again later.',
+        message: error instanceof Error ? error.message : '⚠️ Submission failed. Please try again later.',
       });
       
       // Clear error message after 5 seconds
@@ -157,25 +168,25 @@ export default function Lead() {
   };
 
   return (
-    <section className="w-full py-12 md:py-20 lg:py-28 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden">
+    <section className="w-full py-20 md:py-24 lg:py-28 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#7b1e1e]/20 via-[#7b1e1e]/60 to-[#7b1e1e]/20" />
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#7b1e1e]/5 rounded-full blur-3xl" />
       <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#7b1e1e]/5 rounded-full blur-3xl" />
       
-      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-10 relative z-10">
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-10 relative z-10">
+        <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
           
           {/* Left Text - Enhanced */}
-          <div className="space-y-4 md:space-y-6 animate-fade-in-up">
+          <div className="space-y-6 animate-fade-in-up">
             <div>
-              <h2 className="font-jost text-3xl md:text-5xl lg:text-6xl font-bold text-[#1a0e0e] leading-[1.2] tracking-tight">
+              <h2 className="font-jost text-4xl md:text-5xl lg:text-6xl font-bold text-[#1a0e0e] leading-[1.2] tracking-tight">
                 Ready to build
                 <br />
                 your <span className="text-[#7b1e1e] relative inline-block">
                   dreams
                   <svg 
-                    className="absolute -bottom-2 left-0 w-full h-1.5 md:h-2" 
+                    className="absolute -bottom-2 left-0 w-full h-2" 
                     viewBox="0 0 200 8" 
                     fill="none" 
                     xmlns="http://www.w3.org/2000/svg"
@@ -192,19 +203,19 @@ export default function Lead() {
               </h2>
             </div>
             
-            <p className="font-jost text-gray-600 text-base md:text-lg leading-relaxed max-w-md">
+            <p className="font-jost text-gray-600 text-lg leading-relaxed max-w-md">
               Take the first step toward your future. Fill out the form and our expert advisors will guide you through the journey.
             </p>
           </div>
 
-          {/* Form - Optimized for mobile */}
-          <form onSubmit={handleSubmit} className="bg-white rounded-2xl md:rounded-3xl shadow-2xl p-5 md:p-8 lg:p-10 border border-gray-100 transition-all duration-300 hover:shadow-3xl space-y-5 md:space-y-8 transform hover:scale-[1.01]">
+          {/* Form - ENLARGED MODAL CARD */}
+          <form onSubmit={handleSubmit} className="bg-white rounded-3xl shadow-2xl p-8 md:p-10 border border-gray-100 transition-all duration-300 hover:shadow-3xl space-y-8 transform hover:scale-[1.01]">
             
             {/* Row 1: First Name + Surname */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
-                <label className="font-jost text-sm md:text-base font-semibold text-gray-700 flex items-center gap-1.5 mb-1.5 md:mb-2">
-                  <svg className="w-4 h-4 md:w-5 md:h-5 text-[#7b1e1e]/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <label className="font-jost text-base font-semibold text-gray-700 flex items-center gap-1.5 mb-2">
+                  <svg className="w-5 h-5 text-[#7b1e1e]/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                   </svg>
                   First Name
@@ -215,7 +226,7 @@ export default function Lead() {
                   value={formData.firstName}
                   onChange={handleInputChange}
                   placeholder="e.g. James"
-                  className={`font-jost w-full px-4 md:px-5 py-3 md:py-4 text-sm md:text-base rounded-lg md:rounded-xl border transition-all duration-200 outline-none focus:ring-2 placeholder:text-gray-400 text-black ${
+                  className={`font-jost w-full px-5 py-4 text-base rounded-xl border transition-all duration-200 outline-none focus:ring-2 placeholder:text-gray-400 text-black ${
                     errors.firstName
                       ? 'border-red-400 bg-red-50 focus:border-red-400 focus:ring-red-200'
                       : 'border-gray-200 bg-gray-50/50 focus:bg-white focus:border-[#7b1e1e] focus:ring-[#7b1e1e]/20'
@@ -227,8 +238,8 @@ export default function Lead() {
               </div>
 
               <div>
-                <label className="font-jost text-sm md:text-base font-semibold text-gray-700 flex items-center gap-1.5 mb-1.5 md:mb-2">
-                  <svg className="w-4 h-4 md:w-5 md:h-5 text-[#7b1e1e]/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <label className="font-jost text-base font-semibold text-gray-700 flex items-center gap-1.5 mb-2">
+                  <svg className="w-5 h-5 text-[#7b1e1e]/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
                   Surname
@@ -239,7 +250,7 @@ export default function Lead() {
                   value={formData.surname}
                   onChange={handleInputChange}
                   placeholder="e.g. Carter"
-                  className={`font-jost w-full px-4 md:px-5 py-3 md:py-4 text-sm md:text-base rounded-lg md:rounded-xl border transition-all duration-200 outline-none focus:ring-2 placeholder:text-gray-400 text-black ${
+                  className={`font-jost w-full px-5 py-4 text-base rounded-xl border transition-all duration-200 outline-none focus:ring-2 placeholder:text-gray-400 text-black ${
                     errors.surname
                       ? 'border-red-400 bg-red-50 focus:border-red-400 focus:ring-red-200'
                       : 'border-gray-200 bg-gray-50/50 focus:bg-white focus:border-[#7b1e1e] focus:ring-[#7b1e1e]/20'
@@ -252,10 +263,10 @@ export default function Lead() {
             </div>
 
             {/* Row 2: Email + Contact Number */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
-                <label className="font-jost text-sm md:text-base font-semibold text-gray-700 flex items-center gap-1.5 mb-1.5 md:mb-2">
-                  <svg className="w-4 h-4 md:w-5 md:h-5 text-[#7b1e1e]/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <label className="font-jost text-base font-semibold text-gray-700 flex items-center gap-1.5 mb-2">
+                  <svg className="w-5 h-5 text-[#7b1e1e]/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                   Email Address
@@ -266,7 +277,7 @@ export default function Lead() {
                   value={formData.email}
                   onChange={handleInputChange}
                   placeholder="hello@example.com"
-                  className={`font-jost w-full px-4 md:px-5 py-3 md:py-4 text-sm md:text-base rounded-lg md:rounded-xl border transition-all duration-200 outline-none focus:ring-2 placeholder:text-gray-400 text-black ${
+                  className={`font-jost w-full px-5 py-4 text-base rounded-xl border transition-all duration-200 outline-none focus:ring-2 placeholder:text-gray-400 text-black ${
                     errors.email
                       ? 'border-red-400 bg-red-50 focus:border-red-400 focus:ring-red-200'
                       : 'border-gray-200 bg-gray-50/50 focus:bg-white focus:border-[#7b1e1e] focus:ring-[#7b1e1e]/20'
@@ -278,8 +289,8 @@ export default function Lead() {
               </div>
 
               <div>
-                <label className="font-jost text-sm md:text-base font-semibold text-gray-700 flex items-center gap-1.5 mb-1.5 md:mb-2">
-                  <svg className="w-4 h-4 md:w-5 md:h-5 text-[#7b1e1e]/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <label className="font-jost text-base font-semibold text-gray-700 flex items-center gap-1.5 mb-2">
+                  <svg className="w-5 h-5 text-[#7b1e1e]/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                   Contact Number
@@ -290,7 +301,7 @@ export default function Lead() {
                   value={formData.phone}
                   onChange={handleInputChange}
                   placeholder="+1 (555) 000-9999"
-                  className={`font-jost w-full px-4 md:px-5 py-3 md:py-4 text-sm md:text-base rounded-lg md:rounded-xl border transition-all duration-200 outline-none focus:ring-2 placeholder:text-gray-400 text-black ${
+                  className={`font-jost w-full px-5 py-4 text-base rounded-xl border transition-all duration-200 outline-none focus:ring-2 placeholder:text-gray-400 text-black ${
                     errors.phone
                       ? 'border-red-400 bg-red-50 focus:border-red-400 focus:ring-red-200'
                       : 'border-gray-200 bg-gray-50/50 focus:bg-white focus:border-[#7b1e1e] focus:ring-[#7b1e1e]/20'
@@ -303,14 +314,14 @@ export default function Lead() {
             </div>
 
             {/* Row 3: Course Inquiry with Submit Button */}
-            <div className="space-y-3 md:space-y-4">
-              <label className="font-jost text-sm md:text-base font-semibold text-gray-700 flex items-center gap-1.5">
-                <svg className="w-4 h-4 md:w-5 md:h-5 text-[#7b1e1e]/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="space-y-4">
+              <label className="font-jost text-base font-semibold text-gray-700 flex items-center gap-1.5">
+                <svg className="w-5 h-5 text-[#7b1e1e]/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                 </svg>
                 Course Inquiry
               </label>
-              <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <div className="flex-1">
                   <input
                     type="text"
@@ -318,7 +329,7 @@ export default function Lead() {
                     value={formData.course}
                     onChange={handleInputChange}
                     placeholder="e.g. Web Development, Data Science, UI/UX Design"
-                    className={`font-jost w-full px-4 md:px-5 py-3 md:py-4 text-sm md:text-base rounded-lg md:rounded-xl border transition-all duration-200 outline-none focus:ring-2 placeholder:text-gray-400 text-black ${
+                    className={`font-jost w-full px-5 py-4 text-base rounded-xl border transition-all duration-200 outline-none focus:ring-2 placeholder:text-gray-400 text-black ${
                       errors.course
                         ? 'border-red-400 bg-red-50 focus:border-red-400 focus:ring-red-200'
                         : 'border-gray-200 bg-gray-50/50 focus:bg-white focus:border-[#7b1e1e] focus:ring-[#7b1e1e]/20'
@@ -331,11 +342,11 @@ export default function Lead() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="font-jost px-6 md:px-10 py-3 md:py-4 text-base md:text-lg rounded-lg md:rounded-xl bg-[#7b1e1e] text-white font-bold shadow-lg hover:bg-[#641818] hover:shadow-xl transform transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-[#7b1e1e]/40 active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:bg-[#7b1e1e] flex items-center justify-center gap-2 group min-w-[140px] md:min-w-[170px]"
+                  className="font-jost px-10 py-4 text-lg rounded-xl bg-[#7b1e1e] text-white font-bold shadow-lg hover:bg-[#641818] hover:shadow-xl transform transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-[#7b1e1e]/40 active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:bg-[#7b1e1e] flex items-center justify-center gap-2 group min-w-[170px]"
                 >
                   {isSubmitting ? (
                     <>
-                      <svg className="animate-spin h-4 w-4 md:h-5 md:w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                       </svg>
@@ -344,14 +355,14 @@ export default function Lead() {
                   ) : (
                     <>
                       <span>Submit Inquiry</span>
-                      <svg className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
                     </>
                   )}
                 </button>
               </div>
-              <p className="font-jost text-[11px] md:text-xs text-gray-400 flex items-center gap-1 mt-1">
+              <p className="font-jost text-xs text-gray-400 flex items-center gap-1 mt-1">
                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
@@ -361,21 +372,21 @@ export default function Lead() {
 
             {/* Feedback Message */}
             {submitStatus.type && (
-              <div className={`p-3 md:p-4 rounded-lg md:rounded-xl flex items-start gap-3 ${
+              <div className={`p-4 rounded-xl flex items-start gap-3 ${
                 submitStatus.type === 'success'
                   ? 'bg-green-50 text-green-800 border border-green-200'
                   : 'bg-red-50 text-red-800 border border-red-200'
               }`}>
                 {submitStatus.type === 'success' ? (
-                  <svg className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 ) : (
-                  <svg className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 )}
-                <span className="font-jost text-xs md:text-sm">{submitStatus.message}</span>
+                <span className="font-jost text-sm">{submitStatus.message}</span>
               </div>
             )}
           </form>
