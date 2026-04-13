@@ -19,7 +19,6 @@ export default function Section3() {
             if (entry.target === visionRef.current) {
               entry.target.classList.add("animate-fadeInLeft");
             }
-            // Unobserve after animation is added
             observer.unobserve(entry.target);
           }
         });
@@ -34,16 +33,16 @@ export default function Section3() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full py-12">
-      <div className="max-w-8xl w-[85%] mx-auto px-6">
+    <section ref={sectionRef} className="w-full py-6 md:py-8 lg:py-12">
+      <div className="max-w-8xl w-[92%] sm:w-[90%] md:w-[88%] lg:w-[85%] mx-auto px-3 sm:px-4 md:px-6">
         
-        {/* Gray Card Container - 30% larger proportionately */}
-        <div className="bg-[#efefef] rounded-lg p-6 md:p-8">
+        {/* Gray Card Container */}
+        <div className="bg-[#efefef] rounded-lg p-4 sm:p-5 md:p-6 lg:p-8">
           
-          {/* Top Image - 30% larger height */}
+          {/* Top Image - Responsive height */}
           <div 
             ref={imageRef}
-            className="relative w-full h-[438px] md:h-[516px] mb-6 rounded-sm overflow-hidden opacity-0"
+            className="relative w-full h-[220px] sm:h-[320px] md:h-[420px] lg:h-[516px] mb-4 sm:mb-5 md:mb-6 rounded-sm overflow-hidden opacity-0"
           >
             <Image
               src="/Programs/1.png"
@@ -54,18 +53,18 @@ export default function Section3() {
             />
           </div>
 
-          {/* Vision - Full Width */}
+          {/* Vision - Full Width with mobile optimization */}
           <div 
             ref={visionRef}
-            className="ml-2 opacity-0 w-full"
+            className="ml-0 sm:ml-1 md:ml-2 opacity-0 w-full"
           >
-            <h3 className="text-3xl md:text-4xl font-jost font-semibold text-gray-900 transition-colors duration-300 hover:text-[#921A1B]">
+            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-jost font-semibold text-gray-900 transition-colors duration-300 hover:text-[#921A1B]">
               What you'll master
             </h3>
 
-            <div className="w-16 h-[3px] bg-[#921A1B] mt-3 mb-4 transform origin-left transition-transform duration-500 hover:scale-x-150" />
+            <div className="w-10 sm:w-12 md:w-14 lg:w-16 h-[2px] sm:h-[3px] bg-[#921A1B] mt-2 sm:mt-3 mb-3 sm:mb-4 transform origin-left transition-transform duration-500 hover:scale-x-150" />
 
-            <p className="text-gray-800 text-xl md:text-2xl font-jost leading-relaxed max-w-6xl transition-transform duration-300 hover:translate-x-2">
+            <p className="text-gray-800 text-sm sm:text-base md:text-lg lg:text-2xl font-jost leading-relaxed transition-transform duration-300 hover:translate-x-2">
               Step into a day with our CHRO program. Training on the floor, behind the bar, in the kitchen, and at the front desk. This is where hospitality is practiced, not just taught.
             </p>
           </div>
@@ -78,7 +77,7 @@ export default function Section3() {
         @keyframes fadeInUp {
           from {
             opacity: 0;
-            transform: translateY(40px);
+            transform: translateY(30px);
           }
           to {
             opacity: 1;
@@ -89,7 +88,7 @@ export default function Section3() {
         @keyframes fadeInLeft {
           from {
             opacity: 0;
-            transform: translateX(-40px);
+            transform: translateX(-30px);
           }
           to {
             opacity: 1;
@@ -100,7 +99,7 @@ export default function Section3() {
         @keyframes fadeInRight {
           from {
             opacity: 0;
-            transform: translateX(40px);
+            transform: translateX(30px);
           }
           to {
             opacity: 1;

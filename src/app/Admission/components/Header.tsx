@@ -35,7 +35,7 @@ export default function Header() {
       {/* Hero Image - Enhanced */}
       <div className="relative w-full h-[clamp(260px,70vh,730px)] overflow-hidden group">
         <Image
-          src="/Admission/1.png"
+          src="/Admission/1.jpg"
           alt="About ASHA - Hospitality education and training"
           fill
           priority

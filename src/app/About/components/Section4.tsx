@@ -36,16 +36,16 @@ export default function Section4() {
     {
       title: "Industry Ready",
       description: "Skills employers want",
+      shortDesc: "Job-ready",
       icon: (
         <svg
-          className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 transition-transform duration-300 group-hover:rotate-12"
+          className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 transition-transform duration-300 group-hover:rotate-12"
           fill="none"
           stroke="currentColor"
           strokeWidth={1.5}
           viewBox="0 0 24 24"
           style={{ color: 'rgb(146, 26, 27)' }}
         >
-          {/* Briefcase + Checkmark - symbolizes job-ready skills */}
           <path d="M20 7h-4.18A3 3 0 0013 4h-2a3 3 0 00-2.82 3H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z" strokeLinecap="round" />
           <path d="M16 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" strokeLinecap="round" />
           <path d="M17 9l-5 5-3-3" strokeLinecap="round" strokeLinejoin="round" />
@@ -56,16 +56,16 @@ export default function Section4() {
     {
       title: "Flexible",
       description: "Study at your pace",
+      shortDesc: "Self-paced",
       icon: (
         <svg
-          className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 transition-transform duration-300 group-hover:rotate-12"
+          className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 transition-transform duration-300 group-hover:rotate-12"
           fill="none"
           stroke="currentColor"
           strokeWidth={1.5}
           viewBox="0 0 24 24"
           style={{ color: 'rgb(146, 26, 27)' }}
         >
-          {/* Clock + Calendar + Play - represents flexible scheduling */}
           <path d="M12 8v4l2.5 2.5" strokeLinecap="round" />
           <circle cx="12" cy="12" r="9" strokeLinecap="round" />
           <path d="M5 3L3 5" strokeLinecap="round" />
@@ -77,16 +77,16 @@ export default function Section4() {
     {
       title: "Hands on",
       description: "Apprenticeships that lead to jobs",
+      shortDesc: "Real training",
       icon: (
         <svg
-          className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 transition-transform duration-300 group-hover:rotate-12"
+          className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 transition-transform duration-300 group-hover:rotate-12"
           fill="none"
           stroke="currentColor"
           strokeWidth={1.5}
           viewBox="0 0 24 24"
           style={{ color: 'rgb(146, 26, 27)' }}
         >
-          {/* Tools + Gears - represents hands-on practical work */}
           <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" strokeLinecap="round" />
           <path d="M3 21l2-2" strokeLinecap="round" />
         </svg>
@@ -95,16 +95,16 @@ export default function Section4() {
     {
       title: "Connected",
       description: "Local and global career networks",
+      shortDesc: "Global network",
       icon: (
         <svg
-          className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 transition-transform duration-300 group-hover:rotate-12"
+          className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 transition-transform duration-300 group-hover:rotate-12"
           fill="none"
           stroke="currentColor"
           strokeWidth={1.5}
           viewBox="0 0 24 24"
           style={{ color: 'rgb(146, 26, 27)' }}
         >
-          {/* Network nodes + Connections - represents professional networking */}
           <circle cx="12" cy="12" r="2.5" strokeLinecap="round" />
           <circle cx="5" cy="5" r="2.5" strokeLinecap="round" />
           <circle cx="19" cy="5" r="2.5" strokeLinecap="round" />
@@ -124,7 +124,7 @@ export default function Section4() {
   ];
 
   return (
-    <section className="relative w-full bg-gradient-to-br from-[#921A1B] via-[#7a1617] to-[#5a1011] text-white py-6 sm:py-8 md:py-8 lg:py-10 px-4 sm:px-6 overflow-hidden">
+    <section className="relative w-full bg-gradient-to-br from-[#921A1B] via-[#7a1617] to-[#5a1011] text-white py-4 sm:py-6 md:py-8 lg:py-10 px-3 sm:px-4 md:px-6 overflow-hidden">
       {/* Background Pattern - Enhanced */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute inset-0" style={{
@@ -137,11 +137,11 @@ export default function Section4() {
       <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-white/10" />
       
       {/* Decorative Elements - Enhanced with animations */}
-      <div className="absolute top-0 right-0 w-56 h-56 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 animate-pulse" 
+      <div className="absolute top-0 right-0 w-40 sm:w-56 h-40 sm:h-56 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 animate-pulse" 
            style={{ animationDuration: '8s' }} />
-      <div className="absolute bottom-0 left-0 w-56 h-56 bg-white/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 animate-pulse" 
+      <div className="absolute bottom-0 left-0 w-40 sm:w-56 h-40 sm:h-56 bg-white/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 animate-pulse" 
            style={{ animationDuration: '10s', animationDelay: '1s' }} />
-      <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-[#921A1B]/30 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute top-1/2 left-1/2 w-[300px] sm:w-[400px] h-[300px] sm:h-[400px] bg-[#921A1B]/30 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
       
       <div className="relative max-w-7xl mx-auto text-center">
         
@@ -154,47 +154,53 @@ export default function Section4() {
               : 'opacity-0 translate-y-8'
           }`}
         >
-          <h1 className="font-jost text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight bg-gradient-to-r from-white via-white/95 to-white/90 bg-clip-text text-transparent drop-shadow-2xl">
+          <h1 className="font-jost text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight bg-gradient-to-r from-white via-white/95 to-white/90 bg-clip-text text-transparent drop-shadow-2xl">
             The ASHA Advantage
           </h1>
           
-          <p className="font-jost mt-1 text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white/95 max-w-7xl mx-auto leading-tight font-medium">
+          <p className="font-jost mt-1 text-base sm:text-xl md:text-2xl lg:text-3xl text-white/95 max-w-7xl mx-auto leading-tight font-medium px-2">
             We're Not Just a School. We're a Pipeline to Real Jobs
           </p>
         </div>
 
-        {/* 4 Column Features - Updated with new icons and text */}
-        <div className="mt-8 sm:mt-10 md:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+        {/* 4 Column Features - Horizontal on all devices */}
+        <div className="mt-6 sm:mt-8 md:mt-10 lg:mt-12 grid grid-cols-4 gap-1.5 sm:gap-3 md:gap-4 lg:gap-6 xl:gap-8">
           
           {benefits.map((benefit, index) => (
             <div 
               key={index}
-              className="group relative p-3 sm:p-4 md:p-5 transition-all duration-500 hover:transform hover:-translate-y-1 cursor-pointer"
+              className="group relative p-1.5 sm:p-3 md:p-4 lg:p-5 transition-all duration-500 hover:transform hover:-translate-y-1 cursor-pointer"
             >
               {/* Glow effect on hover */}
-              <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 rounded-2xl transition-all duration-500 blur-xl" />
-              <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 rounded-2xl transition-all duration-300" />
+              <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 rounded-xl sm:rounded-2xl transition-all duration-500 blur-xl" />
+              <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 rounded-xl sm:rounded-2xl transition-all duration-300" />
               
               <div className="relative flex flex-col items-center">
                 {/* Outer circle with gradient border */}
                 <div className="relative">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full border-4 sm:border-[5px] border-white/40 group-hover:border-white/70 transition-all duration-300 flex items-center justify-center shadow-xl">
-                    <div className="w-13 h-13 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-white flex items-center justify-center shadow-2xl group-hover:scale-110 transition-all duration-500 group-hover:shadow-[0_0_30px_rgba(255,255,255,0.5)]">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 rounded-full border-2 sm:border-[3px] md:border-4 lg:border-[5px] border-white/40 group-hover:border-white/70 transition-all duration-300 flex items-center justify-center shadow-xl">
+                    <div className="w-10 h-10 sm:w-11 sm:h-11 md:w-13 md:h-13 lg:w-16 lg:h-16 xl:w-20 xl:h-20 rounded-full bg-white flex items-center justify-center shadow-2xl group-hover:scale-110 transition-all duration-500 group-hover:shadow-[0_0_30px_rgba(255,255,255,0.5)]">
                       {benefit.icon}
                     </div>
                   </div>
                 </div>
 
-                <h3 className="font-jost text-base sm:text-lg md:text-xl font-bold tracking-wide mt-3 sm:mt-4 md:mt-5 mb-0.5 sm:mb-1 bg-gradient-to-r from-white to-white/90 bg-clip-text text-transparent">
+                <h3 className="font-jost text-[10px] sm:text-xs md:text-sm lg:text-base xl:text-lg font-bold tracking-wide mt-2 sm:mt-3 md:mt-4 lg:mt-5 mb-0.5 bg-gradient-to-r from-white to-white/90 bg-clip-text text-transparent">
                   {benefit.title}
                 </h3>
 
-                <p className="font-jost text-xs sm:text-xs md:text-sm text-white/80 leading-relaxed max-w-xs group-hover:text-white/90 transition-colors duration-300">
+                {/* Full description on larger screens, short version on mobile */}
+                <p className="font-jost text-[9px] sm:text-[10px] md:text-xs lg:text-sm text-white/80 leading-tight sm:leading-relaxed max-w-xs group-hover:text-white/90 transition-colors duration-300 hidden sm:block">
                   {benefit.description}
                 </p>
                 
+                {/* Short description for mobile */}
+                <p className="font-jost text-[8px] text-white/80 leading-tight max-w-xs group-hover:text-white/90 transition-colors duration-300 sm:hidden">
+                  {benefit.shortDesc}
+                </p>
+                
                 {/* Decorative underline */}
-                <div className="w-6 h-0.5 bg-white/30 group-hover:w-10 group-hover:bg-white/60 transition-all duration-500 mt-1.5 sm:mt-2 rounded-full" />
+                <div className="w-3 sm:w-4 md:w-5 lg:w-6 h-0.5 bg-white/30 group-hover:w-4 sm:group-hover:w-6 md:group-hover:w-8 lg:group-hover:w-10 bg-white/60 transition-all duration-500 mt-1 sm:mt-1.5 md:mt-2 rounded-full" />
               </div>
             </div>
           ))}

@@ -96,7 +96,7 @@ export default function Header() {
               ))}
             </nav>
 
-            {/* Contact Button */}
+            {/* Desktop Contact Button */}
             <button
               onClick={() => setLeadOpen(true)}
               className="hidden md:inline-block bg-red-700 hover:bg-red-800 text-white px-5 py-2 rounded-full transition-all duration-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 active:scale-[0.97]"
@@ -126,7 +126,7 @@ export default function Header() {
         }}
       >
         <nav className="flex flex-col h-full overflow-y-auto pb-8">
-          {/* Navigation Links */}
+          {/* Navigation Links - Removed the duplicate Contact Us from here */}
           <div className="flex-1 px-6 py-4">
             {navItems.map((item) => (
               <Link
@@ -139,21 +139,9 @@ export default function Header() {
                 <ChevronRight size={20} className="text-gray-400 group-hover:text-red-700 group-hover:translate-x-1 transition-all" />
               </Link>
             ))}
-            
-            {/* Mobile Contact Button */}
-            <button
-              onClick={() => {
-                setLeadOpen(true);
-                setOpen(false);
-              }}
-              className="w-full flex items-center justify-between py-4 text-gray-700 font-jost text-lg border-b border-gray-200 hover:text-red-700 transition-colors group"
-            >
-              <span>Contact Us</span>
-              <ChevronRight size={20} className="text-gray-400 group-hover:text-red-700 group-hover:translate-x-1 transition-all" />
-            </button>
           </div>
 
-          {/* Call to Action Section */}
+          {/* Call to Action Section - Single Contact Us button */}
           <div className="px-6 pt-4 pb-6 bg-gray-50 mt-auto">
             <p className="text-sm text-gray-600 mb-3 font-medium">Get in touch with us</p>
             <button
