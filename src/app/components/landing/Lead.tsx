@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, forwardRef } from 'react';
 
 interface FormData {
   firstName: string;
@@ -18,7 +18,7 @@ interface FormErrors {
   course?: string;
 }
 
-export default function Lead() {
+const Lead = forwardRef<HTMLElement>((props, ref) => {
   const [formData, setFormData] = useState<FormData>({
     firstName: '',
     surname: '',
@@ -168,7 +168,10 @@ export default function Lead() {
   };
 
   return (
-    <section className="w-full py-20 md:py-24 lg:py-28 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden">
+    <section 
+      ref={ref}
+      className="w-full py-20 md:py-24 lg:py-28 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden"
+    >
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#7b1e1e]/20 via-[#7b1e1e]/60 to-[#7b1e1e]/20" />
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#7b1e1e]/5 rounded-full blur-3xl" />
@@ -410,4 +413,8 @@ export default function Lead() {
       `}</style>
     </section>
   );
-}
+});
+
+Lead.displayName = 'Lead';
+
+export default Lead;

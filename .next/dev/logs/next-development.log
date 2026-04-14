@@ -280,3 +280,55 @@ Check the render method of `About`.
 [00:32:01.211] Server  LOG     📝 Received Lead form data: {}
 [00:32:01.730] Server  LOG     ✅ Email sent successfully: {}
 [00:32:20.306] Browser WARN    Image with src "/Programs/2.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:39:17.808] Server  LOG     ✓ Compiled in 44ms
+[00:39:22.335] Browser LOG     Book a Call clicked
+[00:39:23.031] Browser LOG     Book a Call clicked
+[00:39:23.449] Browser LOG     Schedule a Call clicked
+[00:41:36.873] Server  LOG     ✓ Compiled in 33ms
+[00:41:38.164] Server  LOG     ✓ Compiled in 46ms
+[00:41:38.959] Browser ERROR   uncaughtError: TypeError: Component is not a function
+[00:42:50.111] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:42:50.248] Server  LOG     ✓ Compiled in 37ms
+[00:42:50.837] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:43:01.440] Browser WARN    Image with src "/Landing/Logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:43:03.182] Browser LOG     Book a Call clicked
+[00:43:06.165] Browser LOG     Schedule a Call clicked
+[00:43:10.569] Server  LOG     ✓ Compiled in 0ms
+[00:43:16.196] Browser WARN    Image with src "/Programs/2.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:46:42.004] Server  LOG     ✓ Compiled in 45ms
+[00:46:42.959] Browser ERROR   uncaughtError: ReferenceError: leadRef is not defined
+[00:46:52.076] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:46:52.180] Server  LOG     ✓ Compiled in 35ms
+[00:46:52.409] Server  ERROR   ⨯ ReferenceError: leadRef is not defined
+[00:46:52.691] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:46:52.959] Browser ERROR   uncaughtError: ReferenceError: leadRef is not defined
+[00:47:14.791] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:47:14.899] Server  LOG     ✓ Compiled in 28ms
+[00:47:15.332] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:47:45.779] Server  LOG     ✓ Compiled in 158ms
+[00:47:53.485] Server  LOG     ✓ Compiled in 41ms
+[00:48:58.559] Server  LOG     ✓ Compiled in 30ms
+[00:49:02.053] Browser WARN    Image with src "/Landing/Logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:53:13.627] Server  LOG     ✓ Compiled in 82ms
+[00:57:19.684] Server  LOG     ✓ Compiled in 138ms
+[00:57:20.253] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:57:33.315] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:57:33.552] Browser WARN    Image with src "/Landing/GIFLOGO.gif" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:57:33.552] Browser WARN    Image with src "/Landing/Hero/1.png" has "fill" prop and "sizes" prop of "100vw", but image is not rendered at full viewport width. Please adjust "sizes" to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:57:48.802] Server  LOG     📝 Received Lead form data: {}
+[00:57:49.375] Server  LOG     ✅ Email sent successfully: {}
+[01:02:18.943] Server  LOG     ✓ Compiled in 88ms
+[01:02:29.675] Server  LOG     ✓ Compiled in 32ms
+[01:03:26.203] Server  LOG     ✅ Resend API Key exists: true
+[01:03:26.205] Server  LOG     ✅ Your email exists: true
+[01:03:26.213] Server  LOG     📝 Received Inquiry form data: {}
+[01:03:26.746] Server  ERROR   ❌ Resend error: {}
+[01:03:39.141] Server  LOG     📝 Received Inquiry form data: {}
+[01:03:40.421] Server  ERROR   ❌ Resend error: {}
+[01:04:07.023] Server  LOG     ✅ Resend API Key exists: true
+[01:04:07.024] Server  LOG     ✅ Your email exists: true
+[01:04:07.031] Server  LOG     📝 Received Inquiry form data: {}
+[01:04:08.273] Server  LOG     ✅ Inquiry email sent successfully: {}
+[01:05:18.217] Server  LOG     ✓ Compiled in 33ms
+[01:05:41.122] Server  LOG     ✓ Compiled in 34ms
+[01:07:29.335] Browser WARN    Image with src "/Programs/2.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes

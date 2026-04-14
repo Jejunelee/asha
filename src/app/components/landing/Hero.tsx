@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, forwardRef } from "react";
 
-export default function Hero() {
+const Hero = forwardRef<HTMLElement>((props, ref) => {
   const images = ["/Landing/Hero/1.png"];
   const [index, setIndex] = useState(0);
   const [leadOpen, setLeadOpen] = useState(false);
@@ -71,13 +71,22 @@ export default function Hero() {
     };
   }, []);
 
+  const scrollToLead = () => {
+    if (ref && 'current' in ref && ref.current) {
+      ref.current.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start' 
+      });
+    }
+  };
+
   const handleBookCall = () => {
-    // Add your book a call logic here
+    scrollToLead();
     console.log("Book a Call clicked");
   };
 
   const handleScheduleCall = () => {
-    // Add your schedule a call logic here
+    scrollToLead();
     console.log("Schedule a Call clicked");
   };
 
@@ -203,4 +212,8 @@ from Classroom to Industry
       </div>
     </section>
   );
-}
+});
+
+Hero.displayName = 'Hero';
+
+export default Hero;

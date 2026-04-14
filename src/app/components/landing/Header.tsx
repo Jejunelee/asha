@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, X, ChevronRight } from "lucide-react";
+import ContactForm from "./ContactForm";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -169,6 +170,12 @@ export default function Header() {
           aria-hidden="true"
         />
       )}
+
+      {/* Contact Form Modal */}
+      <ContactForm 
+        isOpen={leadOpen} 
+        onClose={() => setLeadOpen(false)} 
+      />
     </>
   );
 }

@@ -4,7 +4,7 @@
 
 __turbopack_context__.s([
     "default",
-    ()=>Hero
+    ()=>__TURBOPACK__default__export__
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-client] (ecmascript)");
@@ -14,7 +14,7 @@ var _s = __turbopack_context__.k.signature();
 "use client";
 ;
 ;
-function Hero() {
+const Hero = /*#__PURE__*/ _s((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["forwardRef"])(_c = _s((props, ref)=>{
     _s();
     const images = [
         "/Landing/Hero/1.png"
@@ -86,12 +86,20 @@ function Hero() {
             })["Hero.useEffect"];
         }
     }["Hero.useEffect"], []);
+    const scrollToLead = ()=>{
+        if (ref && 'current' in ref && ref.current) {
+            ref.current.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    };
     const handleBookCall = ()=>{
-        // Add your book a call logic here
+        scrollToLead();
         console.log("Book a Call clicked");
     };
     const handleScheduleCall = ()=>{
-        // Add your schedule a call logic here
+        scrollToLead();
         console.log("Schedule a Call clicked");
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -113,16 +121,16 @@ function Hero() {
                             sizes: "100vw"
                         }, src, false, {
                             fileName: "[project]/src/app/components/landing/Hero.tsx",
-                            lineNumber: 99,
+                            lineNumber: 108,
                             columnNumber: 11
-                        }, this)),
+                        }, ("TURBOPACK compile-time value", void 0))),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute inset-y-0 left-0 w-full md:w-[55%] lg:w-[50%] bg-gradient-to-r from-[#921A1B]/50 via-[#921A1B]/40 to-transparent"
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/landing/Hero.tsx",
-                        lineNumber: 113,
+                        lineNumber: 122,
                         columnNumber: 9
-                    }, this),
+                    }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute inset-0 opacity-10 pointer-events-none",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -132,14 +140,14 @@ function Hero() {
                             }
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/landing/Hero.tsx",
-                            lineNumber: 117,
+                            lineNumber: 126,
                             columnNumber: 11
-                        }, this)
+                        }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/landing/Hero.tsx",
-                        lineNumber: 116,
+                        lineNumber: 125,
                         columnNumber: 9
-                    }, this),
+                    }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute bottom-8 sm:bottom-12 md:bottom-16 lg:bottom-20 left-1/2 -translate-x-1/2 z-30 flex gap-2 sm:gap-3",
                         children: images.map((_, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -148,14 +156,14 @@ function Hero() {
                                 "aria-label": `Go to image ${i + 1}`
                             }, i, false, {
                                 fileName: "[project]/src/app/components/landing/Hero.tsx",
-                                lineNumber: 125,
+                                lineNumber: 134,
                                 columnNumber: 13
-                            }, this))
+                            }, ("TURBOPACK compile-time value", void 0)))
                     }, void 0, false, {
                         fileName: "[project]/src/app/components/landing/Hero.tsx",
-                        lineNumber: 123,
+                        lineNumber: 132,
                         columnNumber: 9
-                    }, this),
+                    }, ("TURBOPACK compile-time value", void 0)),
                     images.length > 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -174,19 +182,19 @@ function Hero() {
                                         d: "M15 19l-7-7 7-7"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/landing/Hero.tsx",
-                                        lineNumber: 147,
+                                        lineNumber: 156,
                                         columnNumber: 17
-                                    }, this)
+                                    }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/landing/Hero.tsx",
-                                    lineNumber: 146,
+                                    lineNumber: 155,
                                     columnNumber: 15
-                                }, this)
+                                }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/landing/Hero.tsx",
-                                lineNumber: 141,
+                                lineNumber: 150,
                                 columnNumber: 13
-                            }, this),
+                            }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: next,
                                 className: "absolute right-4 top-1/2 -translate-y-1/2 z-30 hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-black/30 hover:bg-black/50 backdrop-blur-sm text-white transition-all duration-300 hover:scale-110 opacity-0 group-hover:opacity-100",
@@ -203,27 +211,27 @@ function Hero() {
                                         d: "M9 5l7 7-7 7"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/landing/Hero.tsx",
-                                        lineNumber: 156,
+                                        lineNumber: 165,
                                         columnNumber: 17
-                                    }, this)
+                                    }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/landing/Hero.tsx",
-                                    lineNumber: 155,
+                                    lineNumber: 164,
                                     columnNumber: 15
-                                }, this)
+                                }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/landing/Hero.tsx",
-                                lineNumber: 150,
+                                lineNumber: 159,
                                 columnNumber: 13
-                            }, this)
+                            }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/components/landing/Hero.tsx",
-                lineNumber: 92,
+                lineNumber: 101,
                 columnNumber: 7
-            }, this),
+            }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "relative z-20 flex items-start md:items-center justify-center md:justify-start h-full pt-12 md:pt-0 px-4 sm:px-6 lg:px-10 xl:px-16 text-center md:text-left",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -240,16 +248,16 @@ function Hero() {
                                     "Build your Hospitality Career ",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                         fileName: "[project]/src/app/components/landing/Hero.tsx",
-                                        lineNumber: 171,
+                                        lineNumber: 180,
                                         columnNumber: 45
-                                    }, this),
+                                    }, ("TURBOPACK compile-time value", void 0)),
                                     "from Classroom to Industry"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/landing/Hero.tsx",
-                                lineNumber: 168,
+                                lineNumber: 177,
                                 columnNumber: 13
-                            }, this),
+                            }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: `mt-4 sm:mt-5 md:mt-6 font-jost leading-relaxed sm:leading-tight text-white text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl max-w-[38ch] sm:max-w-[42ch] md:max-w-[800px] lg:max-w-[900px] mx-auto md:mx-0 transition-all duration-700 delay-200 ${isInView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`,
                                 style: {
@@ -258,9 +266,9 @@ function Hero() {
                                 children: "ASHA trains you in real hotels and restaurants from day one. You'll work alongside industry professionals, not sit in a classroom."
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/landing/Hero.tsx",
-                                lineNumber: 175,
+                                lineNumber: 184,
                                 columnNumber: 13
-                            }, this),
+                            }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: `mt-6 sm:mt-8 md:mt-10 lg:mt-12 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start transition-all duration-700 delay-300 ${isInView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`,
                                 children: [
@@ -273,9 +281,9 @@ function Hero() {
                                         children: "Book a Call"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/landing/Hero.tsx",
-                                        lineNumber: 185,
+                                        lineNumber: 194,
                                         columnNumber: 15
-                                    }, this),
+                                    }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                         onClick: handleScheduleCall,
                                         className: "font-jost bg-gradient-to-r from-[#921A1B] to-[#b32526] hover:from-[#b32526] hover:to-[#921A1B] text-white font-medium px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg lg:text-xl transition-all duration-300 shadow-lg hover:shadow-2xl active:scale-95 rounded-xl sm:rounded-2xl w-full max-w-[200px] sm:max-w-[220px] md:max-w-[240px] mx-auto sm:mx-0 hover:-translate-y-0.5",
@@ -285,42 +293,44 @@ function Hero() {
                                         children: "Schedule a Call"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/landing/Hero.tsx",
-                                        lineNumber: 192,
+                                        lineNumber: 201,
                                         columnNumber: 15
-                                    }, this)
+                                    }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/landing/Hero.tsx",
-                                lineNumber: 182,
+                                lineNumber: 191,
                                 columnNumber: 13
-                            }, this)
+                            }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/landing/Hero.tsx",
-                        lineNumber: 166,
+                        lineNumber: 175,
                         columnNumber: 11
-                    }, this)
+                    }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/src/app/components/landing/Hero.tsx",
-                    lineNumber: 165,
+                    lineNumber: 174,
                     columnNumber: 9
-                }, this)
+                }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/app/components/landing/Hero.tsx",
-                lineNumber: 164,
+                lineNumber: 173,
                 columnNumber: 7
-            }, this)
+            }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/components/landing/Hero.tsx",
-        lineNumber: 85,
+        lineNumber: 94,
         columnNumber: 5
-    }, this);
-}
-_s(Hero, "6D8y5LJ209cGppKLs3WU+J1Hw5E=");
-_c = Hero;
-var _c;
-__turbopack_context__.k.register(_c, "Hero");
+    }, ("TURBOPACK compile-time value", void 0));
+}, "6D8y5LJ209cGppKLs3WU+J1Hw5E=")), "6D8y5LJ209cGppKLs3WU+J1Hw5E=");
+_c1 = Hero;
+Hero.displayName = 'Hero';
+const __TURBOPACK__default__export__ = Hero;
+var _c, _c1;
+__turbopack_context__.k.register(_c, "Hero$forwardRef");
+__turbopack_context__.k.register(_c1, "Hero");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }
@@ -1053,7 +1063,7 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 
 __turbopack_context__.s([
     "default",
-    ()=>Lead
+    ()=>__TURBOPACK__default__export__
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
@@ -1061,7 +1071,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var _s = __turbopack_context__.k.signature();
 "use client";
 ;
-function Lead() {
+const Lead = /*#__PURE__*/ _s((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["forwardRef"])(_c = _s((props, ref)=>{
     _s();
     const [formData, setFormData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
         firstName: '',
@@ -1213,29 +1223,30 @@ function Lead() {
         }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+        ref: ref,
         className: "w-full py-20 md:py-24 lg:py-28 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#7b1e1e]/20 via-[#7b1e1e]/60 to-[#7b1e1e]/20"
             }, void 0, false, {
                 fileName: "[project]/src/app/components/landing/Lead.tsx",
-                lineNumber: 173,
+                lineNumber: 176,
                 columnNumber: 7
-            }, this),
+            }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute -top-40 -right-40 w-80 h-80 bg-[#7b1e1e]/5 rounded-full blur-3xl"
             }, void 0, false, {
                 fileName: "[project]/src/app/components/landing/Lead.tsx",
-                lineNumber: 174,
+                lineNumber: 177,
                 columnNumber: 7
-            }, this),
+            }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute -bottom-40 -left-40 w-80 h-80 bg-[#7b1e1e]/5 rounded-full blur-3xl"
             }, void 0, false, {
                 fileName: "[project]/src/app/components/landing/Lead.tsx",
-                lineNumber: 175,
+                lineNumber: 178,
                 columnNumber: 7
-            }, this),
+            }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "max-w-7xl mx-auto px-6 md:px-8 lg:px-10 relative z-10",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1251,9 +1262,9 @@ function Lead() {
                                             "Ready to build",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                 fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                lineNumber: 185,
+                                                lineNumber: 188,
                                                 columnNumber: 17
-                                            }, this),
+                                            }, ("TURBOPACK compile-time value", void 0)),
                                             "your ",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 className: "text-[#7b1e1e] relative inline-block",
@@ -1272,46 +1283,46 @@ function Lead() {
                                                             strokeDasharray: "4 3"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                            lineNumber: 194,
+                                                            lineNumber: 197,
                                                             columnNumber: 21
-                                                        }, this)
+                                                        }, ("TURBOPACK compile-time value", void 0))
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                        lineNumber: 188,
+                                                        lineNumber: 191,
                                                         columnNumber: 19
-                                                    }, this)
+                                                    }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                lineNumber: 186,
+                                                lineNumber: 189,
                                                 columnNumber: 22
-                                            }, this),
+                                            }, ("TURBOPACK compile-time value", void 0)),
                                             "?"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                        lineNumber: 183,
+                                        lineNumber: 186,
                                         columnNumber: 15
-                                    }, this)
+                                    }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                    lineNumber: 182,
+                                    lineNumber: 185,
                                     columnNumber: 13
-                                }, this),
+                                }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "font-jost text-gray-600 text-lg leading-relaxed max-w-md",
                                     children: "Take the first step toward your future. Fill out the form and our expert advisors will guide you through the journey."
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                    lineNumber: 206,
+                                    lineNumber: 209,
                                     columnNumber: 13
-                                }, this)
+                                }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/landing/Lead.tsx",
-                            lineNumber: 181,
+                            lineNumber: 184,
                             columnNumber: 11
-                        }, this),
+                        }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
                             onSubmit: handleSubmit,
                             className: "bg-white rounded-3xl shadow-2xl p-8 md:p-10 border border-gray-100 transition-all duration-300 hover:shadow-3xl space-y-8 transform hover:scale-[1.01]",
@@ -1336,21 +1347,21 @@ function Lead() {
                                                                 d: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                                lineNumber: 219,
+                                                                lineNumber: 222,
                                                                 columnNumber: 21
-                                                            }, this)
+                                                            }, ("TURBOPACK compile-time value", void 0))
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                            lineNumber: 218,
+                                                            lineNumber: 221,
                                                             columnNumber: 19
-                                                        }, this),
+                                                        }, ("TURBOPACK compile-time value", void 0)),
                                                         "First Name"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                    lineNumber: 217,
+                                                    lineNumber: 220,
                                                     columnNumber: 17
-                                                }, this),
+                                                }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                     type: "text",
                                                     name: "firstName",
@@ -1360,23 +1371,23 @@ function Lead() {
                                                     className: `font-jost w-full px-5 py-4 text-base rounded-xl border transition-all duration-200 outline-none focus:ring-2 placeholder:text-gray-400 text-black ${errors.firstName ? 'border-red-400 bg-red-50 focus:border-red-400 focus:ring-red-200' : 'border-gray-200 bg-gray-50/50 focus:bg-white focus:border-[#7b1e1e] focus:ring-[#7b1e1e]/20'}`
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                    lineNumber: 223,
+                                                    lineNumber: 226,
                                                     columnNumber: 17
-                                                }, this),
+                                                }, ("TURBOPACK compile-time value", void 0)),
                                                 errors.firstName && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     className: "font-jost text-xs text-red-500 mt-1",
                                                     children: errors.firstName
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                    lineNumber: 236,
+                                                    lineNumber: 239,
                                                     columnNumber: 19
-                                                }, this)
+                                                }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                            lineNumber: 216,
+                                            lineNumber: 219,
                                             columnNumber: 15
-                                        }, this),
+                                        }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -1394,21 +1405,21 @@ function Lead() {
                                                                 d: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                                lineNumber: 243,
+                                                                lineNumber: 246,
                                                                 columnNumber: 21
-                                                            }, this)
+                                                            }, ("TURBOPACK compile-time value", void 0))
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                            lineNumber: 242,
+                                                            lineNumber: 245,
                                                             columnNumber: 19
-                                                        }, this),
+                                                        }, ("TURBOPACK compile-time value", void 0)),
                                                         "Surname"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                    lineNumber: 241,
+                                                    lineNumber: 244,
                                                     columnNumber: 17
-                                                }, this),
+                                                }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                     type: "text",
                                                     name: "surname",
@@ -1418,29 +1429,29 @@ function Lead() {
                                                     className: `font-jost w-full px-5 py-4 text-base rounded-xl border transition-all duration-200 outline-none focus:ring-2 placeholder:text-gray-400 text-black ${errors.surname ? 'border-red-400 bg-red-50 focus:border-red-400 focus:ring-red-200' : 'border-gray-200 bg-gray-50/50 focus:bg-white focus:border-[#7b1e1e] focus:ring-[#7b1e1e]/20'}`
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                    lineNumber: 247,
+                                                    lineNumber: 250,
                                                     columnNumber: 17
-                                                }, this),
+                                                }, ("TURBOPACK compile-time value", void 0)),
                                                 errors.surname && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     className: "font-jost text-xs text-red-500 mt-1",
                                                     children: errors.surname
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                    lineNumber: 260,
+                                                    lineNumber: 263,
                                                     columnNumber: 19
-                                                }, this)
+                                                }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                            lineNumber: 240,
+                                            lineNumber: 243,
                                             columnNumber: 15
-                                        }, this)
+                                        }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                    lineNumber: 215,
+                                    lineNumber: 218,
                                     columnNumber: 13
-                                }, this),
+                                }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "grid grid-cols-1 sm:grid-cols-2 gap-6",
                                     children: [
@@ -1461,21 +1472,21 @@ function Lead() {
                                                                 d: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                                lineNumber: 270,
+                                                                lineNumber: 273,
                                                                 columnNumber: 21
-                                                            }, this)
+                                                            }, ("TURBOPACK compile-time value", void 0))
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                            lineNumber: 269,
+                                                            lineNumber: 272,
                                                             columnNumber: 19
-                                                        }, this),
+                                                        }, ("TURBOPACK compile-time value", void 0)),
                                                         "Email Address"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                    lineNumber: 268,
+                                                    lineNumber: 271,
                                                     columnNumber: 17
-                                                }, this),
+                                                }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                     type: "email",
                                                     name: "email",
@@ -1485,23 +1496,23 @@ function Lead() {
                                                     className: `font-jost w-full px-5 py-4 text-base rounded-xl border transition-all duration-200 outline-none focus:ring-2 placeholder:text-gray-400 text-black ${errors.email ? 'border-red-400 bg-red-50 focus:border-red-400 focus:ring-red-200' : 'border-gray-200 bg-gray-50/50 focus:bg-white focus:border-[#7b1e1e] focus:ring-[#7b1e1e]/20'}`
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                    lineNumber: 274,
+                                                    lineNumber: 277,
                                                     columnNumber: 17
-                                                }, this),
+                                                }, ("TURBOPACK compile-time value", void 0)),
                                                 errors.email && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     className: "font-jost text-xs text-red-500 mt-1",
                                                     children: errors.email
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                    lineNumber: 287,
+                                                    lineNumber: 290,
                                                     columnNumber: 19
-                                                }, this)
+                                                }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                            lineNumber: 267,
+                                            lineNumber: 270,
                                             columnNumber: 15
-                                        }, this),
+                                        }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -1519,21 +1530,21 @@ function Lead() {
                                                                 d: "M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                                lineNumber: 294,
+                                                                lineNumber: 297,
                                                                 columnNumber: 21
-                                                            }, this)
+                                                            }, ("TURBOPACK compile-time value", void 0))
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                            lineNumber: 293,
+                                                            lineNumber: 296,
                                                             columnNumber: 19
-                                                        }, this),
+                                                        }, ("TURBOPACK compile-time value", void 0)),
                                                         "Contact Number"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                    lineNumber: 292,
+                                                    lineNumber: 295,
                                                     columnNumber: 17
-                                                }, this),
+                                                }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                     type: "tel",
                                                     name: "phone",
@@ -1543,29 +1554,29 @@ function Lead() {
                                                     className: `font-jost w-full px-5 py-4 text-base rounded-xl border transition-all duration-200 outline-none focus:ring-2 placeholder:text-gray-400 text-black ${errors.phone ? 'border-red-400 bg-red-50 focus:border-red-400 focus:ring-red-200' : 'border-gray-200 bg-gray-50/50 focus:bg-white focus:border-[#7b1e1e] focus:ring-[#7b1e1e]/20'}`
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                    lineNumber: 298,
+                                                    lineNumber: 301,
                                                     columnNumber: 17
-                                                }, this),
+                                                }, ("TURBOPACK compile-time value", void 0)),
                                                 errors.phone && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     className: "font-jost text-xs text-red-500 mt-1",
                                                     children: errors.phone
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                    lineNumber: 311,
+                                                    lineNumber: 314,
                                                     columnNumber: 19
-                                                }, this)
+                                                }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                            lineNumber: 291,
+                                            lineNumber: 294,
                                             columnNumber: 15
-                                        }, this)
+                                        }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                    lineNumber: 266,
+                                    lineNumber: 269,
                                     columnNumber: 13
-                                }, this),
+                                }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "space-y-4",
                                     children: [
@@ -1584,21 +1595,21 @@ function Lead() {
                                                         d: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                        lineNumber: 320,
+                                                        lineNumber: 323,
                                                         columnNumber: 19
-                                                    }, this)
+                                                    }, ("TURBOPACK compile-time value", void 0))
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                    lineNumber: 319,
+                                                    lineNumber: 322,
                                                     columnNumber: 17
-                                                }, this),
+                                                }, ("TURBOPACK compile-time value", void 0)),
                                                 "Course Inquiry"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                            lineNumber: 318,
+                                            lineNumber: 321,
                                             columnNumber: 15
-                                        }, this),
+                                        }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "flex flex-col sm:flex-row gap-4",
                                             children: [
@@ -1614,23 +1625,23 @@ function Lead() {
                                                             className: `font-jost w-full px-5 py-4 text-base rounded-xl border transition-all duration-200 outline-none focus:ring-2 placeholder:text-gray-400 text-black ${errors.course ? 'border-red-400 bg-red-50 focus:border-red-400 focus:ring-red-200' : 'border-gray-200 bg-gray-50/50 focus:bg-white focus:border-[#7b1e1e] focus:ring-[#7b1e1e]/20'}`
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                            lineNumber: 326,
+                                                            lineNumber: 329,
                                                             columnNumber: 19
-                                                        }, this),
+                                                        }, ("TURBOPACK compile-time value", void 0)),
                                                         errors.course && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                             className: "font-jost text-xs text-red-500 mt-1",
                                                             children: errors.course
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                            lineNumber: 339,
+                                                            lineNumber: 342,
                                                             columnNumber: 21
-                                                        }, this)
+                                                        }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                    lineNumber: 325,
+                                                    lineNumber: 328,
                                                     columnNumber: 17
-                                                }, this),
+                                                }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                     type: "submit",
                                                     disabled: isSubmitting,
@@ -1652,31 +1663,31 @@ function Lead() {
                                                                         strokeWidth: "4"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                                        lineNumber: 350,
+                                                                        lineNumber: 353,
                                                                         columnNumber: 25
-                                                                    }, this),
+                                                                    }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                                                                         className: "opacity-75",
                                                                         fill: "currentColor",
                                                                         d: "M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                                        lineNumber: 351,
+                                                                        lineNumber: 354,
                                                                         columnNumber: 25
-                                                                    }, this)
+                                                                    }, ("TURBOPACK compile-time value", void 0))
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                                lineNumber: 349,
+                                                                lineNumber: 352,
                                                                 columnNumber: 23
-                                                            }, this),
+                                                            }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                 children: "Sending..."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                                lineNumber: 353,
+                                                                lineNumber: 356,
                                                                 columnNumber: 23
-                                                            }, this)
+                                                            }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                                                         children: [
@@ -1684,9 +1695,9 @@ function Lead() {
                                                                 children: "Submit Inquiry"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                                lineNumber: 357,
+                                                                lineNumber: 360,
                                                                 columnNumber: 23
-                                                            }, this),
+                                                            }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
                                                                 className: "w-5 h-5 group-hover:translate-x-1 transition-transform duration-200",
                                                                 fill: "none",
@@ -1699,27 +1710,27 @@ function Lead() {
                                                                     d: "M14 5l7 7m0 0l-7 7m7-7H3"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                                    lineNumber: 359,
+                                                                    lineNumber: 362,
                                                                     columnNumber: 25
-                                                                }, this)
+                                                                }, ("TURBOPACK compile-time value", void 0))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                                lineNumber: 358,
+                                                                lineNumber: 361,
                                                                 columnNumber: 23
-                                                            }, this)
+                                                            }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                    lineNumber: 342,
+                                                    lineNumber: 345,
                                                     columnNumber: 17
-                                                }, this)
+                                                }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                            lineNumber: 324,
+                                            lineNumber: 327,
                                             columnNumber: 15
-                                        }, this),
+                                        }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             className: "font-jost text-xs text-gray-400 flex items-center gap-1 mt-1",
                                             children: [
@@ -1735,27 +1746,27 @@ function Lead() {
                                                         d: "M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                        lineNumber: 367,
+                                                        lineNumber: 370,
                                                         columnNumber: 19
-                                                    }, this)
+                                                    }, ("TURBOPACK compile-time value", void 0))
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                    lineNumber: 366,
+                                                    lineNumber: 369,
                                                     columnNumber: 17
-                                                }, this),
+                                                }, ("TURBOPACK compile-time value", void 0)),
                                                 "We'll never share your info. Privacy guaranteed."
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                            lineNumber: 365,
+                                            lineNumber: 368,
                                             columnNumber: 15
-                                        }, this)
+                                        }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                    lineNumber: 317,
+                                    lineNumber: 320,
                                     columnNumber: 13
-                                }, this),
+                                }, ("TURBOPACK compile-time value", void 0)),
                                 submitStatus.type && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: `p-4 rounded-xl flex items-start gap-3 ${submitStatus.type === 'success' ? 'bg-green-50 text-green-800 border border-green-200' : 'bg-red-50 text-red-800 border border-red-200'}`,
                                     children: [
@@ -1771,14 +1782,14 @@ function Lead() {
                                                 d: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                lineNumber: 382,
+                                                lineNumber: 385,
                                                 columnNumber: 21
-                                            }, this)
+                                            }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                            lineNumber: 381,
+                                            lineNumber: 384,
                                             columnNumber: 19
-                                        }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                        }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
                                             className: "w-5 h-5 flex-shrink-0",
                                             fill: "none",
                                             stroke: "currentColor",
@@ -1790,45 +1801,45 @@ function Lead() {
                                                 d: "M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                                lineNumber: 386,
+                                                lineNumber: 389,
                                                 columnNumber: 21
-                                            }, this)
+                                            }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                            lineNumber: 385,
+                                            lineNumber: 388,
                                             columnNumber: 19
-                                        }, this),
+                                        }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             className: "font-jost text-sm",
                                             children: submitStatus.message
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                            lineNumber: 389,
+                                            lineNumber: 392,
                                             columnNumber: 17
-                                        }, this)
+                                        }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                                    lineNumber: 375,
+                                    lineNumber: 378,
                                     columnNumber: 15
-                                }, this)
+                                }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/landing/Lead.tsx",
-                            lineNumber: 212,
+                            lineNumber: 215,
                             columnNumber: 11
-                        }, this)
+                        }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/components/landing/Lead.tsx",
-                    lineNumber: 178,
+                    lineNumber: 181,
                     columnNumber: 9
-                }, this)
+                }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/app/components/landing/Lead.tsx",
-                lineNumber: 177,
+                lineNumber: 180,
                 columnNumber: 7
-            }, this),
+            }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
                 children: `
         @keyframes fadeInUp {
@@ -1847,20 +1858,22 @@ function Lead() {
       `
             }, void 0, false, {
                 fileName: "[project]/src/app/components/landing/Lead.tsx",
-                lineNumber: 396,
+                lineNumber: 399,
                 columnNumber: 7
-            }, this)
+            }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/components/landing/Lead.tsx",
         lineNumber: 171,
         columnNumber: 5
-    }, this);
-}
-_s(Lead, "8kxx6rO5PHzFeCPL6W0XA73g9KE=");
-_c = Lead;
-var _c;
-__turbopack_context__.k.register(_c, "Lead");
+    }, ("TURBOPACK compile-time value", void 0));
+}, "8kxx6rO5PHzFeCPL6W0XA73g9KE=")), "8kxx6rO5PHzFeCPL6W0XA73g9KE=");
+_c1 = Lead;
+Lead.displayName = 'Lead';
+const __TURBOPACK__default__export__ = Lead;
+var _c, _c1;
+__turbopack_context__.k.register(_c, "Lead$forwardRef");
+__turbopack_context__.k.register(_c1, "Lead");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }
