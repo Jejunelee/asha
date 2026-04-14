@@ -118,13 +118,25 @@ export default function Section5() {
     setSubmitStatus({ type: null, message: '' });
 
     try {
-      // Simulate API call - replace with actual API endpoint
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      // Use the existing send-mail API endpoint (same as Lead.tsx)
+      const response = await fetch('/api/send-mail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Submission failed');
+      }
       
       // Success
       setSubmitStatus({
         type: 'success',
-        message: '✨ Thank you! Your inquiry has been sent. Our team will contact you shortly.',
+        message: result.message || '✨ Thank you! Your inquiry has been sent. Our team will contact you shortly.',
       });
       
       // Reset form
@@ -144,7 +156,7 @@ export default function Section5() {
       // Error
       setSubmitStatus({
         type: 'error',
-        message: '⚠️ Submission failed. Please try again later.',
+        message: error instanceof Error ? error.message : '⚠️ Submission failed. Please try again later.',
       });
       
       // Clear error message after 5 seconds

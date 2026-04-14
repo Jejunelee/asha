@@ -131,7 +131,7 @@ export default function ApplyingFor() {
       setStep(prev => Math.min(prev + 1, totalSteps));
       // Clear errors for next step
       setErrors({});
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Removed: window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
       // Scroll to first error
       const firstErrorField = document.querySelector('.border-red-400');
@@ -144,7 +144,7 @@ export default function ApplyingFor() {
   const handlePrevious = () => {
     setStep(prev => Math.max(prev - 1, 1));
     setErrors({});
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Removed: window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -175,13 +175,25 @@ export default function ApplyingFor() {
     setSubmitStatus({ type: null, message: '' });
 
     try {
-      // Simulate API call - replace with actual API endpoint
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      // ACTUAL API CALL - Send to our new application endpoint
+      const response = await fetch('/api/send-application', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Submission failed');
+      }
       
       // Success
       setSubmitStatus({
         type: 'success',
-        message: '🎉 Application submitted successfully! Our admissions team will contact you within 24 hours.',
+        message: result.message || '🎉 Application submitted successfully! Our admissions team will contact you within 24 hours.',
       });
       
       // Reset form and go back to step 1
@@ -206,7 +218,7 @@ export default function ApplyingFor() {
       // Error
       setSubmitStatus({
         type: 'error',
-        message: '⚠️ Submission failed. Please check your connection and try again.',
+        message: error instanceof Error ? error.message : '⚠️ Submission failed. Please check your connection and try again.',
       });
       
       // Clear error message after 5 seconds
@@ -352,7 +364,7 @@ export default function ApplyingFor() {
                     name="gender"
                     value={formData.gender}
                     onChange={handleInputChange}
-                    className={`font-jost w-full px-5 py-4 text-base rounded-xl border transition-all duration-200 outline-none focus:ring-2 bg-gray-50/50 focus:bg-white focus:border-[#7b1e1e] focus:ring-[#7b1e1e]/20 text-black ${
+                    className={`font-jost w-full px-5 py-4 text-base rounded-xl border transition-all duration-200 outline-none focus:ring-2 bg-gray-50/50 focus:bg-white focus:border-[#7b1e1e] focus:ring-[#7b1e1e]/20 text-black custom-select ${
                       errors.gender ? 'border-red-400 bg-red-50' : 'border-gray-200'
                     }`}
                   >
@@ -375,7 +387,7 @@ export default function ApplyingFor() {
                     name="civilStatus"
                     value={formData.civilStatus}
                     onChange={handleInputChange}
-                    className={`font-jost w-full px-5 py-4 text-base rounded-xl border transition-all duration-200 outline-none focus:ring-2 bg-gray-50/50 focus:bg-white focus:border-[#7b1e1e] focus:ring-[#7b1e1e]/20 text-black ${
+                    className={`font-jost w-full px-5 py-4 text-base rounded-xl border transition-all duration-200 outline-none focus:ring-2 bg-gray-50/50 focus:bg-white focus:border-[#7b1e1e] focus:ring-[#7b1e1e]/20 text-black custom-select ${
                       errors.civilStatus ? 'border-red-400 bg-red-50' : 'border-gray-200'
                     }`}
                   >
@@ -493,7 +505,7 @@ export default function ApplyingFor() {
                   name="highestEducationalAttainment"
                   value={formData.highestEducationalAttainment}
                   onChange={handleInputChange}
-                  className={`font-jost w-full px-5 py-4 text-base rounded-xl border transition-all duration-200 outline-none focus:ring-2 bg-gray-50/50 focus:bg-white focus:border-[#7b1e1e] focus:ring-[#7b1e1e]/20 text-black ${
+                  className={`font-jost w-full px-5 py-4 text-base rounded-xl border transition-all duration-200 outline-none focus:ring-2 bg-gray-50/50 focus:bg-white focus:border-[#7b1e1e] focus:ring-[#7b1e1e]/20 text-black custom-select ${
                     errors.highestEducationalAttainment ? 'border-red-400 bg-red-50' : 'border-gray-200'
                   }`}
                 >
@@ -568,7 +580,7 @@ export default function ApplyingFor() {
             }`}>
               {submitStatus.type === 'success' ? (
                 <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2l4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               ) : (
                 <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -594,6 +606,21 @@ export default function ApplyingFor() {
         }
         .animate-fade-in-up {
           animation: fadeInUp 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+        }
+        
+        /* Custom select styling to fix chevron position */
+        .custom-select {
+          appearance: none;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23666'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+          background-repeat: no-repeat;
+          background-position: right 1rem center;
+          background-size: 1.5rem;
+          padding-right: 2.5rem !important;
+        }
+        
+        /* Firefox support */
+        .custom-select::-ms-expand {
+          display: none;
         }
       `}</style>
     </section>

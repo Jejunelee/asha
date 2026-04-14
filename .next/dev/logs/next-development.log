@@ -1,23 +1,282 @@
-[00:00:01.439] Server  LOG     ✓ Ready in 1121ms
-[00:00:08.453] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:32.757] Server  LOG     ✓ Compiled in 48ms
-[00:00:38.405] Browser WARN    Image with src "/Landing/Logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:54.866] Server  LOG     Resend API Key exists: true
-[00:00:54.868] Server  LOG     Your email exists: true
-[00:00:54.886] Server  LOG     Received Join Us form data: {}
-[00:01:01.728] Server  LOG     Received Join Us form data: {}
-[00:01:09.690] Server  LOG     Received Join Us form data: {}
-[00:02:58.570] Server  LOG     ✅ Resend API Key exists: true
-[00:02:58.571] Server  LOG     ✅ Your email exists: true
-[00:02:58.575] Server  LOG     📝 Received Lead form data: {}
-[00:02:59.099] Server  ERROR   ❌ Resend error: {}
-[00:03:21.741] Server  LOG     ✓ Compiled in 25ms
-[00:03:23.486] Server  LOG     ✅ Resend API Key exists: true
-[00:03:23.487] Server  LOG     ✅ Your email exists: true
-[00:03:23.491] Server  LOG     📝 Received Lead form data: {}
-[00:03:23.929] Server  ERROR   ❌ Resend error: {}
-[00:03:34.101] Server  LOG       Reload env: .env.local
-[00:03:37.182] Server  LOG     ✅ Resend API Key exists: true
-[00:03:37.183] Server  LOG     ✅ Your email exists: true
-[00:03:37.187] Server  LOG     📝 Received Lead form data: {}
-[00:03:37.646] Server  LOG     ✅ Email sent successfully: {}
+[00:00:01.056] Server  LOG     ✓ Ready in 822ms
+[00:00:07.041] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Export default doesn't exist in target module
+  3 | import BYD from "./components/landing/BYD";
+  4 | import Latest from "./components/landing/Latest";
+> 5 | import Lead from "./components/landing/Lead";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 |
+  8 | export default function Home() {
+
+The export default was not found in module [project]/src/app/components/landing/Lead.tsx [app-rsc] (ecmascript).
+Did you mean to import POST?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+
+[00:00:07.371] Browser ERROR   uncaughtError: Error: ./src/app/page.tsx:5:1
+Export default doesn't exist in target module
+  3 | import BYD from "./components/landing/BYD";
+  4 | import Latest from "./components/landing/Latest";
+> 5 | import Lead from "./components/landing/Lead";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 |
+  8 | export default function Home() {
+
+The export default was not found in module [project]/src/app/components/landing/Lead.tsx [app-rsc] (ecmascript).
+Did you mean to import POST?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+
+[00:00:07.541] Browser ERROR   ./src/app/page.tsx:5:1
+Export default doesn't exist in target module
+  3 | import BYD from "./components/landing/BYD";
+  4 | import Latest from "./components/landing/Latest";
+> 5 | import Lead from "./components/landing/Lead";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 |
+  8 | export default function Home() {
+
+The export default was not found in module [project]/src/app/components/landing/Lead.tsx [app-rsc] (ecmascript).
+Did you mean to import POST?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:00:07.541] Browser ERROR   ./src/app/page.tsx:5:1
+Export default doesn't exist in target module
+  3 | import BYD from "./components/landing/BYD";
+  4 | import Latest from "./components/landing/Latest";
+> 5 | import Lead from "./components/landing/Lead";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 |
+  8 | export default function Home() {
+
+The export default was not found in module [project]/src/app/components/landing/Lead.tsx [app-rsc] (ecmascript).
+Did you mean to import POST?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:00:07.793] Browser ERROR   ./src/app/page.tsx:5:1
+Export default doesn't exist in target module
+  3 | import BYD from "./components/landing/BYD";
+  4 | import Latest from "./components/landing/Latest";
+> 5 | import Lead from "./components/landing/Lead";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 |
+  8 | export default function Home() {
+
+The export default was not found in module [project]/src/app/components/landing/Lead.tsx [app-rsc] (ecmascript).
+Did you mean to import POST?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:00:14.685] Browser ERROR   ./src/app/page.tsx:5:1
+Export default doesn't exist in target module
+  3 | import BYD from "./components/landing/BYD";
+  4 | import Latest from "./components/landing/Latest";
+> 5 | import Lead from "./components/landing/Lead";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 |
+  8 | export default function Home() {
+
+The export default was not found in module [project]/src/app/components/landing/Lead.tsx [app-rsc] (ecmascript).
+Did you mean to import POST?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:00:15.938] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Export default doesn't exist in target module
+  3 | import BYD from "./components/landing/BYD";
+  4 | import Latest from "./components/landing/Latest";
+> 5 | import Lead from "./components/landing/Lead";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 |
+  8 | export default function Home() {
+
+The export default was not found in module [project]/src/app/components/landing/Lead.tsx [app-rsc] (ecmascript).
+Did you mean to import POST?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+
+[00:00:16.034] Browser ERROR   uncaughtError: Error: ./src/app/page.tsx:5:1
+Export default doesn't exist in target module
+  3 | import BYD from "./components/landing/BYD";
+  4 | import Latest from "./components/landing/Latest";
+> 5 | import Lead from "./components/landing/Lead";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 |
+  8 | export default function Home() {
+
+The export default was not found in module [project]/src/app/components/landing/Lead.tsx [app-rsc] (ecmascript).
+Did you mean to import POST?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+
+[00:00:16.173] Browser ERROR   ./src/app/page.tsx:5:1
+Export default doesn't exist in target module
+  3 | import BYD from "./components/landing/BYD";
+  4 | import Latest from "./components/landing/Latest";
+> 5 | import Lead from "./components/landing/Lead";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 |
+  8 | export default function Home() {
+
+The export default was not found in module [project]/src/app/components/landing/Lead.tsx [app-rsc] (ecmascript).
+Did you mean to import POST?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:00:16.173] Browser ERROR   ./src/app/page.tsx:5:1
+Export default doesn't exist in target module
+  3 | import BYD from "./components/landing/BYD";
+  4 | import Latest from "./components/landing/Latest";
+> 5 | import Lead from "./components/landing/Lead";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 |
+  8 | export default function Home() {
+
+The export default was not found in module [project]/src/app/components/landing/Lead.tsx [app-rsc] (ecmascript).
+Did you mean to import POST?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:02:11.959] Browser ERROR   ./src/app/page.tsx:5:1
+Export default doesn't exist in target module
+  3 | import BYD from "./components/landing/BYD";
+  4 | import Latest from "./components/landing/Latest";
+> 5 | import Lead from "./components/landing/Lead";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 |
+  8 | export default function Home() {
+
+The export default was not found in module [project]/src/app/components/landing/Lead.tsx [app-rsc] (ecmascript).
+Did you mean to import POST?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:02:13.967] Browser ERROR   ./src/app/page.tsx:5:1
+Export default doesn't exist in target module
+  3 | import BYD from "./components/landing/BYD";
+  4 | import Latest from "./components/landing/Latest";
+> 5 | import Lead from "./components/landing/Lead";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 |
+  8 | export default function Home() {
+
+The export default was not found in module [project]/src/app/components/landing/Lead.tsx [app-rsc] (ecmascript).
+Did you mean to import POST?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:02:38.959] Browser ERROR   ./src/app/page.tsx:5:1
+Export default doesn't exist in target module
+  3 | import BYD from "./components/landing/BYD";
+  4 | import Latest from "./components/landing/Latest";
+> 5 | import Lead from "./components/landing/Lead";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 |
+  8 | export default function Home() {
+
+The export default was not found in module [project]/src/app/components/landing/Lead.tsx [app-rsc] (ecmascript).
+Did you mean to import POST?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:02:42.008] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Export default doesn't exist in target module
+  3 | import BYD from "./components/landing/BYD";
+  4 | import Latest from "./components/landing/Latest";
+> 5 | import Lead from "./components/landing/Lead";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 |
+  8 | export default function Home() {
+
+The export default was not found in module [project]/src/app/components/landing/Lead.tsx [app-rsc] (ecmascript).
+Did you mean to import POST?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+
+[00:02:42.158] Browser ERROR   uncaughtError: Error: ./src/app/page.tsx:5:1
+Export default doesn't exist in target module
+  3 | import BYD from "./components/landing/BYD";
+  4 | import Latest from "./components/landing/Latest";
+> 5 | import Lead from "./components/landing/Lead";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 |
+  8 | export default function Home() {
+
+The export default was not found in module [project]/src/app/components/landing/Lead.tsx [app-rsc] (ecmascript).
+Did you mean to import POST?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+
+[00:02:42.296] Browser ERROR   ./src/app/page.tsx:5:1
+Export default doesn't exist in target module
+  3 | import BYD from "./components/landing/BYD";
+  4 | import Latest from "./components/landing/Latest";
+> 5 | import Lead from "./components/landing/Lead";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 |
+  8 | export default function Home() {
+
+The export default was not found in module [project]/src/app/components/landing/Lead.tsx [app-rsc] (ecmascript).
+Did you mean to import POST?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:02:42.296] Browser ERROR   ./src/app/page.tsx:5:1
+Export default doesn't exist in target module
+  3 | import BYD from "./components/landing/BYD";
+  4 | import Latest from "./components/landing/Latest";
+> 5 | import Lead from "./components/landing/Lead";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 |
+  8 | export default function Home() {
+
+The export default was not found in module [project]/src/app/components/landing/Lead.tsx [app-rsc] (ecmascript).
+Did you mean to import POST?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[00:02:47.366] Server  WARN    ⚠ The requested resource "/Landing/GIFLOGO.gif" is an animated image so it will not be optimized. Consider adding the "unoptimized" property to the <Image>.
+[00:02:47.431] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:47.618] Browser WARN    Image with src "/Landing/GIFLOGO.gif" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:02:47.618] Browser WARN    Image with src "/Landing/Hero/1.png" has "fill" prop and "sizes" prop of "100vw", but image is not rendered at full viewport width. Please adjust "sizes" to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:05:26.960] Browser WARN    Image with src "/Landing/Logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:05:34.083] Server  LOG     ✓ Compiled in 0ms
+[00:05:47.308] Server  LOG     ✅ Resend API Key exists: true
+[00:05:47.308] Server  LOG     ✅ Your email exists: true
+[00:05:47.317] Server  LOG     📝 Received Lead form data: {}
+[00:05:48.042] Server  LOG     ✅ Email sent successfully: {}
+[00:06:38.801] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./src/app/Alumni/components/Section1.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:06:39.059] Server  LOG     ✓ Compiled in 54ms
+[00:06:39.249] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:58.280] Browser WARN    Image with src "/Landing/Logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:09:22.847] Server  LOG     ✅ Resend API Key exists: true
+[00:09:22.848] Server  LOG     ✅ Your email exists: true
+[00:09:22.853] Server  LOG     📝 Received Lead form data: {}
+[00:09:30.874] Server  LOG     📝 Received Lead form data: {}
+[00:09:35.079] Server  LOG     📝 Received Lead form data: {}
+[00:09:54.461] Server  LOG     📝 Received Lead form data: {}
+[00:10:06.742] Server  LOG     ✓ Compiled in 24ms
+[00:11:39.388] Server  LOG     ✓ Compiled in 2ms
+[00:16:47.645] Server  LOG     ✓ Compiled in 32ms
+[00:18:39.692] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:18:40.016] Browser WARN    Image with src "/Landing/GIFLOGO.gif" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:18:40.016] Browser WARN    Image with src "/Admission/1.jpg" has "fill" prop and "sizes" prop of "100vw", but image is not rendered at full viewport width. Please adjust "sizes" to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:19:08.092] Server  LOG     ✅ Resend API Key exists: true
+[00:19:08.094] Server  LOG     ✅ Admissions email exists: true
+[00:19:08.105] Server  LOG     📝 Received Application form data: {}
+[00:19:08.705] Server  LOG     ✅ Application email sent successfully: {}
+[00:20:42.963] Browser ERROR   uncaughtError: Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: object. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+
+Check the render method of `About`.
+[00:20:44.510] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:20:44.690] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:07.960] Server  LOG     ✓ Compiled in 50ms
+[00:21:18.533] Server  LOG     ✓ Compiled in 37ms
+[00:21:34.629] Browser WARN    Image with src "/Landing/Logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:23:42.712] Server  LOG     ✓ Compiled in 54ms
+[00:24:01.894] Server  LOG     📝 Received Application form data: {}
+[00:24:02.560] Server  LOG     ✅ Application email sent successfully: {}
+[00:25:46.204] Server  LOG     ✓ Compiled in 134ms
+[00:31:31.494] Server  LOG     ✓ Compiled in 72ms
+[00:32:01.202] Server  LOG     ✅ Resend API Key exists: true
+[00:32:01.203] Server  LOG     ✅ Your email exists: true
+[00:32:01.211] Server  LOG     📝 Received Lead form data: {}
+[00:32:01.730] Server  LOG     ✅ Email sent successfully: {}
+[00:32:20.306] Browser WARN    Image with src "/Programs/2.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes

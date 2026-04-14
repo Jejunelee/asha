@@ -1756,12 +1756,22 @@ function Section5() {
             message: ''
         });
         try {
-            // Simulate API call - replace with actual API endpoint
-            await new Promise((resolve)=>setTimeout(resolve, 1500));
+            // Use the existing send-mail API endpoint (same as Lead.tsx)
+            const response = await fetch('/api/send-mail', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+            const result = await response.json();
+            if (!response.ok) {
+                throw new Error(result.error || 'Submission failed');
+            }
             // Success
             setSubmitStatus({
                 type: 'success',
-                message: '✨ Thank you! Your inquiry has been sent. Our team will contact you shortly.'
+                message: result.message || '✨ Thank you! Your inquiry has been sent. Our team will contact you shortly.'
             });
             // Reset form
             setFormData({
@@ -1782,7 +1792,7 @@ function Section5() {
             // Error
             setSubmitStatus({
                 type: 'error',
-                message: '⚠️ Submission failed. Please try again later.'
+                message: error instanceof Error ? error.message : '⚠️ Submission failed. Please try again later.'
             });
             // Clear error message after 5 seconds
             setTimeout(()=>{
@@ -1802,21 +1812,21 @@ function Section5() {
                 className: "absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#7b1e1e]/20 via-[#7b1e1e]/60 to-[#7b1e1e]/20"
             }, void 0, false, {
                 fileName: "[project]/src/app/About/components/Section5.tsx",
-                lineNumber: 162,
+                lineNumber: 174,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute -top-40 -right-40 w-80 h-80 bg-[#7b1e1e]/5 rounded-full blur-3xl"
             }, void 0, false, {
                 fileName: "[project]/src/app/About/components/Section5.tsx",
-                lineNumber: 163,
+                lineNumber: 175,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute -bottom-40 -left-40 w-80 h-80 bg-[#7b1e1e]/5 rounded-full blur-3xl"
             }, void 0, false, {
                 fileName: "[project]/src/app/About/components/Section5.tsx",
-                lineNumber: 164,
+                lineNumber: 176,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1849,30 +1859,30 @@ function Section5() {
                                                             strokeDasharray: "4 3"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                            lineNumber: 181,
+                                                            lineNumber: 193,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                        lineNumber: 175,
+                                                        lineNumber: 187,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                lineNumber: 173,
+                                                lineNumber: 185,
                                                 columnNumber: 26
                                             }, this),
                                             " ?"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/About/components/Section5.tsx",
-                                        lineNumber: 172,
+                                        lineNumber: 184,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/About/components/Section5.tsx",
-                                    lineNumber: 171,
+                                    lineNumber: 183,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1880,13 +1890,13 @@ function Section5() {
                                     children: "Take the first step toward your future. Fill out the form and our expert advisors will guide you through the journey."
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/About/components/Section5.tsx",
-                                    lineNumber: 193,
+                                    lineNumber: 205,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/About/components/Section5.tsx",
-                            lineNumber: 170,
+                            lineNumber: 182,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -1913,19 +1923,19 @@ function Section5() {
                                                                 d: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                                lineNumber: 206,
+                                                                lineNumber: 218,
                                                                 columnNumber: 21
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                            lineNumber: 205,
+                                                            lineNumber: 217,
                                                             columnNumber: 19
                                                         }, this),
                                                         "First Name"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                    lineNumber: 204,
+                                                    lineNumber: 216,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1937,7 +1947,7 @@ function Section5() {
                                                     className: `font-jost w-full px-5 py-4 text-base rounded-xl border transition-all duration-200 outline-none focus:ring-2 placeholder:text-gray-400 text-black ${errors.firstName ? 'border-red-400 bg-red-50 focus:border-red-400 focus:ring-red-200' : 'border-gray-200 bg-gray-50/50 focus:bg-white focus:border-[#7b1e1e] focus:ring-[#7b1e1e]/20'}`
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                    lineNumber: 210,
+                                                    lineNumber: 222,
                                                     columnNumber: 17
                                                 }, this),
                                                 errors.firstName && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1945,13 +1955,13 @@ function Section5() {
                                                     children: errors.firstName
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                    lineNumber: 223,
+                                                    lineNumber: 235,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/About/components/Section5.tsx",
-                                            lineNumber: 203,
+                                            lineNumber: 215,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1971,19 +1981,19 @@ function Section5() {
                                                                 d: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                                lineNumber: 230,
+                                                                lineNumber: 242,
                                                                 columnNumber: 21
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                            lineNumber: 229,
+                                                            lineNumber: 241,
                                                             columnNumber: 19
                                                         }, this),
                                                         "Surname"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                    lineNumber: 228,
+                                                    lineNumber: 240,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1995,7 +2005,7 @@ function Section5() {
                                                     className: `font-jost w-full px-5 py-4 text-base rounded-xl border transition-all duration-200 outline-none focus:ring-2 placeholder:text-gray-400 text-black ${errors.surname ? 'border-red-400 bg-red-50 focus:border-red-400 focus:ring-red-200' : 'border-gray-200 bg-gray-50/50 focus:bg-white focus:border-[#7b1e1e] focus:ring-[#7b1e1e]/20'}`
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                    lineNumber: 234,
+                                                    lineNumber: 246,
                                                     columnNumber: 17
                                                 }, this),
                                                 errors.surname && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2003,19 +2013,19 @@ function Section5() {
                                                     children: errors.surname
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                    lineNumber: 247,
+                                                    lineNumber: 259,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/About/components/Section5.tsx",
-                                            lineNumber: 227,
+                                            lineNumber: 239,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/About/components/Section5.tsx",
-                                    lineNumber: 202,
+                                    lineNumber: 214,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2038,19 +2048,19 @@ function Section5() {
                                                                 d: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                                lineNumber: 257,
+                                                                lineNumber: 269,
                                                                 columnNumber: 21
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                            lineNumber: 256,
+                                                            lineNumber: 268,
                                                             columnNumber: 19
                                                         }, this),
                                                         "Email Address"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                    lineNumber: 255,
+                                                    lineNumber: 267,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2062,7 +2072,7 @@ function Section5() {
                                                     className: `font-jost w-full px-5 py-4 text-base rounded-xl border transition-all duration-200 outline-none focus:ring-2 placeholder:text-gray-400 text-black ${errors.email ? 'border-red-400 bg-red-50 focus:border-red-400 focus:ring-red-200' : 'border-gray-200 bg-gray-50/50 focus:bg-white focus:border-[#7b1e1e] focus:ring-[#7b1e1e]/20'}`
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                    lineNumber: 261,
+                                                    lineNumber: 273,
                                                     columnNumber: 17
                                                 }, this),
                                                 errors.email && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2070,13 +2080,13 @@ function Section5() {
                                                     children: errors.email
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                    lineNumber: 274,
+                                                    lineNumber: 286,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/About/components/Section5.tsx",
-                                            lineNumber: 254,
+                                            lineNumber: 266,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2096,19 +2106,19 @@ function Section5() {
                                                                 d: "M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                                lineNumber: 281,
+                                                                lineNumber: 293,
                                                                 columnNumber: 21
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                            lineNumber: 280,
+                                                            lineNumber: 292,
                                                             columnNumber: 19
                                                         }, this),
                                                         "Contact Number"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                    lineNumber: 279,
+                                                    lineNumber: 291,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2120,7 +2130,7 @@ function Section5() {
                                                     className: `font-jost w-full px-5 py-4 text-base rounded-xl border transition-all duration-200 outline-none focus:ring-2 placeholder:text-gray-400 text-black ${errors.phone ? 'border-red-400 bg-red-50 focus:border-red-400 focus:ring-red-200' : 'border-gray-200 bg-gray-50/50 focus:bg-white focus:border-[#7b1e1e] focus:ring-[#7b1e1e]/20'}`
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                    lineNumber: 285,
+                                                    lineNumber: 297,
                                                     columnNumber: 17
                                                 }, this),
                                                 errors.phone && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2128,19 +2138,19 @@ function Section5() {
                                                     children: errors.phone
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                    lineNumber: 298,
+                                                    lineNumber: 310,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/About/components/Section5.tsx",
-                                            lineNumber: 278,
+                                            lineNumber: 290,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/About/components/Section5.tsx",
-                                    lineNumber: 253,
+                                    lineNumber: 265,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2161,19 +2171,19 @@ function Section5() {
                                                         d: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                        lineNumber: 307,
+                                                        lineNumber: 319,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                    lineNumber: 306,
+                                                    lineNumber: 318,
                                                     columnNumber: 17
                                                 }, this),
                                                 "Course Inquiry"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/About/components/Section5.tsx",
-                                            lineNumber: 305,
+                                            lineNumber: 317,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2191,7 +2201,7 @@ function Section5() {
                                                             className: `font-jost w-full px-5 py-4 text-base rounded-xl border transition-all duration-200 outline-none focus:ring-2 placeholder:text-gray-400 text-black ${errors.course ? 'border-red-400 bg-red-50 focus:border-red-400 focus:ring-red-200' : 'border-gray-200 bg-gray-50/50 focus:bg-white focus:border-[#7b1e1e] focus:ring-[#7b1e1e]/20'}`
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                            lineNumber: 313,
+                                                            lineNumber: 325,
                                                             columnNumber: 19
                                                         }, this),
                                                         errors.course && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2199,13 +2209,13 @@ function Section5() {
                                                             children: errors.course
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                            lineNumber: 326,
+                                                            lineNumber: 338,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                    lineNumber: 312,
+                                                    lineNumber: 324,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2229,7 +2239,7 @@ function Section5() {
                                                                         strokeWidth: "4"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                                        lineNumber: 337,
+                                                                        lineNumber: 349,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -2238,20 +2248,20 @@ function Section5() {
                                                                         d: "M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                                        lineNumber: 338,
+                                                                        lineNumber: 350,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                                lineNumber: 336,
+                                                                lineNumber: 348,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                 children: "Sending..."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                                lineNumber: 340,
+                                                                lineNumber: 352,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
@@ -2261,7 +2271,7 @@ function Section5() {
                                                                 children: "Submit Inquiry"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                                lineNumber: 344,
+                                                                lineNumber: 356,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
@@ -2276,25 +2286,25 @@ function Section5() {
                                                                     d: "M14 5l7 7m0 0l-7 7m7-7H3"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                                    lineNumber: 346,
+                                                                    lineNumber: 358,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                                lineNumber: 345,
+                                                                lineNumber: 357,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                    lineNumber: 329,
+                                                    lineNumber: 341,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/About/components/Section5.tsx",
-                                            lineNumber: 311,
+                                            lineNumber: 323,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2312,25 +2322,25 @@ function Section5() {
                                                         d: "M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                        lineNumber: 354,
+                                                        lineNumber: 366,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                    lineNumber: 353,
+                                                    lineNumber: 365,
                                                     columnNumber: 17
                                                 }, this),
                                                 "We'll never share your info. Privacy guaranteed."
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/About/components/Section5.tsx",
-                                            lineNumber: 352,
+                                            lineNumber: 364,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/About/components/Section5.tsx",
-                                    lineNumber: 304,
+                                    lineNumber: 316,
                                     columnNumber: 13
                                 }, this),
                                 submitStatus.type && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2348,12 +2358,12 @@ function Section5() {
                                                 d: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                lineNumber: 369,
+                                                lineNumber: 381,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/About/components/Section5.tsx",
-                                            lineNumber: 368,
+                                            lineNumber: 380,
                                             columnNumber: 19
                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
                                             className: "w-5 h-5 flex-shrink-0",
@@ -2367,12 +2377,12 @@ function Section5() {
                                                 d: "M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/About/components/Section5.tsx",
-                                                lineNumber: 373,
+                                                lineNumber: 385,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/About/components/Section5.tsx",
-                                            lineNumber: 372,
+                                            lineNumber: 384,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2380,30 +2390,30 @@ function Section5() {
                                             children: submitStatus.message
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/About/components/Section5.tsx",
-                                            lineNumber: 376,
+                                            lineNumber: 388,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/About/components/Section5.tsx",
-                                    lineNumber: 362,
+                                    lineNumber: 374,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/About/components/Section5.tsx",
-                            lineNumber: 199,
+                            lineNumber: 211,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/About/components/Section5.tsx",
-                    lineNumber: 167,
+                    lineNumber: 179,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/About/components/Section5.tsx",
-                lineNumber: 166,
+                lineNumber: 178,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
@@ -2424,13 +2434,13 @@ function Section5() {
       `
             }, void 0, false, {
                 fileName: "[project]/src/app/About/components/Section5.tsx",
-                lineNumber: 383,
+                lineNumber: 395,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/About/components/Section5.tsx",
-        lineNumber: 160,
+        lineNumber: 172,
         columnNumber: 5
     }, this);
 }

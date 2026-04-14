@@ -149,9 +149,9 @@ async function POST(request) {
         // Send email using Resend
         const fullName = `${firstName} ${surname}`;
         const { data, error } = await resend.emails.send({
-            from: 'Course Inquiry <onboarding@resend.dev>',
+            from: 'Course Inquiry <admission@asha.edu.ph>',
             to: [
-                yourEmail || 'admin@yourdomain.com'
+                yourEmail || 'admission@asha.edu.ph'
             ],
             replyTo: email,
             subject: `🎓 New Course Inquiry: ${fullName} is interested in ${course}`,
