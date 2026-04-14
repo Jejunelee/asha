@@ -103,8 +103,8 @@ export async function POST(request: NextRequest) {
     const fullName = `${firstName} ${surname}`;
     
     const { data, error } = await resend.emails.send({
-      from: 'Course Inquiry <onboarding@resend.dev>', // Use Resend's default domain for testing
-      to: [yourEmail || 'admin@yourdomain.com'], // Your receiving email
+      from: 'Course Inquiry <admission@asha.edu.ph>', // Use Resend's default domain for testing
+      to: [yourEmail || 'admission@asha.edu.ph'], // Your receiving email
       replyTo: email,
       subject: `🎓 New Course Inquiry: ${fullName} is interested in ${course}`,
       html: `
