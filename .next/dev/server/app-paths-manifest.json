@@ -1,11 +1,4 @@
 {
-  "/About/page": "app/About/page.js",
   "/Admission/page": "app/Admission/page.js",
-  "/Alumni/page": "app/Alumni/page.js",
-  "/Our-Programs/page": "app/Our-Programs/page.js",
-  "/Partners/page": "app/Partners/page.js",
-  "/api/send-application/route": "app/api/send-application/route.js",
-  "/api/send-inquiry/route": "app/api/send-inquiry/route.js",
-  "/api/send-mail/route": "app/api/send-mail/route.js",
   "/page": "app/page.js"
 }

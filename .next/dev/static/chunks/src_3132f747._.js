@@ -1260,7 +1260,7 @@ function Footer() {
         },
         {
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$md$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MdEmail"],
-            text: "info@asha.edu.ph",
+            text: "admission@asha.edu.ph",
             link: "mailto:admission@asha.edu.ph"
         }
     ];

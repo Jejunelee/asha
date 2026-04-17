@@ -939,33 +939,105 @@ function ApplyingFor() {
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/Admission/components/Section1.tsx",
                                                 lineNumber: 480,
-                                                columnNumber: 17
+                                                columnNumber: 7
                                             }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                                type: "text",
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
                                                 name: "course",
                                                 value: formData.course,
                                                 onChange: handleInputChange,
-                                                placeholder: "e.g. Computer Science, Business Administration, Nursing",
-                                                className: `font-jost w-full px-5 py-4 text-base rounded-xl border transition-all duration-200 outline-none focus:ring-2 placeholder:text-gray-400 text-black ${errors.course ? 'border-red-400 bg-red-50 focus:border-red-400 focus:ring-red-200' : 'border-gray-200 bg-gray-50/50 focus:bg-white focus:border-[#7b1e1e] focus:ring-[#7b1e1e]/20'}`
-                                            }, void 0, false, {
+                                                className: `font-jost w-full px-5 py-4 text-base rounded-xl border transition-all duration-200 outline-none focus:ring-2 bg-gray-50/50 focus:bg-white focus:border-[#7b1e1e] focus:ring-[#7b1e1e]/20 text-black custom-select ${errors.course ? 'border-red-400 bg-red-50' : 'border-gray-200'}`,
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                        value: "",
+                                                        children: "Select course"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/app/Admission/components/Section1.tsx",
+                                                        lineNumber: 492,
+                                                        columnNumber: 9
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                        value: "Hotel & Restaurants Operations",
+                                                        children: "Hotel & Restaurants Operations"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/app/Admission/components/Section1.tsx",
+                                                        lineNumber: 493,
+                                                        columnNumber: 9
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                        value: "Food and Beverage Service",
+                                                        children: "Food and Beverage Service"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/app/Admission/components/Section1.tsx",
+                                                        lineNumber: 494,
+                                                        columnNumber: 9
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                        value: "Barista",
+                                                        children: "Barista"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/app/Admission/components/Section1.tsx",
+                                                        lineNumber: 495,
+                                                        columnNumber: 9
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                        value: "Housekeeping",
+                                                        children: "Housekeeping"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/app/Admission/components/Section1.tsx",
+                                                        lineNumber: 496,
+                                                        columnNumber: 9
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                        value: "Butler",
+                                                        children: "Butler"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/app/Admission/components/Section1.tsx",
+                                                        lineNumber: 497,
+                                                        columnNumber: 9
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                        value: "Front Office",
+                                                        children: "Front Office"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/app/Admission/components/Section1.tsx",
+                                                        lineNumber: 498,
+                                                        columnNumber: 9
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                        value: "Bartending",
+                                                        children: "Bartending"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/app/Admission/components/Section1.tsx",
+                                                        lineNumber: 499,
+                                                        columnNumber: 9
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                        value: "Cookery",
+                                                        children: "Cookery"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/app/Admission/components/Section1.tsx",
+                                                        lineNumber: 500,
+                                                        columnNumber: 9
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
                                                 fileName: "[project]/src/app/Admission/components/Section1.tsx",
-                                                lineNumber: 483,
-                                                columnNumber: 17
+                                                lineNumber: 484,
+                                                columnNumber: 7
                                             }, this),
                                             errors.course && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 className: "font-jost text-xs text-red-500 mt-1",
                                                 children: errors.course
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/Admission/components/Section1.tsx",
-                                                lineNumber: 496,
-                                                columnNumber: 19
+                                                lineNumber: 504,
+                                                columnNumber: 9
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/Admission/components/Section1.tsx",
                                         lineNumber: 479,
-                                        columnNumber: 15
+                                        columnNumber: 5
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         children: [
@@ -974,8 +1046,8 @@ function ApplyingFor() {
                                                 children: "Highest Educational Attainment"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/Admission/components/Section1.tsx",
-                                                lineNumber: 501,
-                                                columnNumber: 17
+                                                lineNumber: 509,
+                                                columnNumber: 7
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
                                                 name: "highestEducationalAttainment",
@@ -988,90 +1060,90 @@ function ApplyingFor() {
                                                         children: "Select educational attainment"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/Admission/components/Section1.tsx",
-                                                        lineNumber: 512,
-                                                        columnNumber: 19
+                                                        lineNumber: 520,
+                                                        columnNumber: 9
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                         value: "elementary",
                                                         children: "Elementary Graduate"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/Admission/components/Section1.tsx",
-                                                        lineNumber: 513,
-                                                        columnNumber: 19
+                                                        lineNumber: 521,
+                                                        columnNumber: 9
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                         value: "high-school",
                                                         children: "High School Graduate"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/Admission/components/Section1.tsx",
-                                                        lineNumber: 514,
-                                                        columnNumber: 19
+                                                        lineNumber: 522,
+                                                        columnNumber: 9
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                         value: "senior-high",
                                                         children: "Senior High School Graduate"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/Admission/components/Section1.tsx",
-                                                        lineNumber: 515,
-                                                        columnNumber: 19
+                                                        lineNumber: 523,
+                                                        columnNumber: 9
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                         value: "associate",
                                                         children: "Associate Degree"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/Admission/components/Section1.tsx",
-                                                        lineNumber: 516,
-                                                        columnNumber: 19
+                                                        lineNumber: 524,
+                                                        columnNumber: 9
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                         value: "bachelor",
                                                         children: "Bachelor's Degree"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/Admission/components/Section1.tsx",
-                                                        lineNumber: 517,
-                                                        columnNumber: 19
+                                                        lineNumber: 525,
+                                                        columnNumber: 9
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                         value: "master",
                                                         children: "Master's Degree"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/Admission/components/Section1.tsx",
-                                                        lineNumber: 518,
-                                                        columnNumber: 19
+                                                        lineNumber: 526,
+                                                        columnNumber: 9
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                         value: "doctorate",
                                                         children: "Doctorate Degree"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/Admission/components/Section1.tsx",
-                                                        lineNumber: 519,
-                                                        columnNumber: 19
+                                                        lineNumber: 527,
+                                                        columnNumber: 9
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/Admission/components/Section1.tsx",
-                                                lineNumber: 504,
-                                                columnNumber: 17
+                                                lineNumber: 512,
+                                                columnNumber: 7
                                             }, this),
                                             errors.highestEducationalAttainment && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 className: "font-jost text-xs text-red-500 mt-1",
                                                 children: errors.highestEducationalAttainment
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/Admission/components/Section1.tsx",
-                                                lineNumber: 522,
-                                                columnNumber: 19
+                                                lineNumber: 531,
+                                                columnNumber: 9
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/Admission/components/Section1.tsx",
-                                        lineNumber: 500,
-                                        columnNumber: 15
+                                        lineNumber: 508,
+                                        columnNumber: 5
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/Admission/components/Section1.tsx",
                                 lineNumber: 478,
-                                columnNumber: 13
+                                columnNumber: 3
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "flex justify-between gap-4 mt-10 pt-6 border-t border-gray-100",
@@ -1083,7 +1155,7 @@ function ApplyingFor() {
                                         children: "← Previous"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/Admission/components/Section1.tsx",
-                                        lineNumber: 531,
+                                        lineNumber: 542,
                                         columnNumber: 15
                                     }, this),
                                     step < totalSteps ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1093,7 +1165,7 @@ function ApplyingFor() {
                                         children: "Next →"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/Admission/components/Section1.tsx",
-                                        lineNumber: 541,
+                                        lineNumber: 552,
                                         columnNumber: 15
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                         type: "submit",
@@ -1116,7 +1188,7 @@ function ApplyingFor() {
                                                             strokeWidth: "4"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/Admission/components/Section1.tsx",
-                                                            lineNumber: 557,
+                                                            lineNumber: 568,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -1125,20 +1197,20 @@ function ApplyingFor() {
                                                             d: "M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/Admission/components/Section1.tsx",
-                                                            lineNumber: 558,
+                                                            lineNumber: 569,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/Admission/components/Section1.tsx",
-                                                    lineNumber: 556,
+                                                    lineNumber: 567,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: "Submitting..."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/Admission/components/Section1.tsx",
-                                                    lineNumber: 560,
+                                                    lineNumber: 571,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
@@ -1148,7 +1220,7 @@ function ApplyingFor() {
                                                     children: "Submit Application"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/Admission/components/Section1.tsx",
-                                                    lineNumber: 564,
+                                                    lineNumber: 575,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
@@ -1163,25 +1235,25 @@ function ApplyingFor() {
                                                         d: "M5 13l4 4L19 7"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/Admission/components/Section1.tsx",
-                                                        lineNumber: 566,
+                                                        lineNumber: 577,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/Admission/components/Section1.tsx",
-                                                    lineNumber: 565,
+                                                    lineNumber: 576,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/Admission/components/Section1.tsx",
-                                        lineNumber: 549,
+                                        lineNumber: 560,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/Admission/components/Section1.tsx",
-                                lineNumber: 529,
+                                lineNumber: 540,
                                 columnNumber: 11
                             }, this),
                             submitStatus.type && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1199,12 +1271,12 @@ function ApplyingFor() {
                                             d: "M9 12l2 2l4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/Admission/components/Section1.tsx",
-                                            lineNumber: 583,
+                                            lineNumber: 594,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/Admission/components/Section1.tsx",
-                                        lineNumber: 582,
+                                        lineNumber: 593,
                                         columnNumber: 17
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
                                         className: "w-5 h-5 flex-shrink-0",
@@ -1218,12 +1290,12 @@ function ApplyingFor() {
                                             d: "M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/Admission/components/Section1.tsx",
-                                            lineNumber: 587,
+                                            lineNumber: 598,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/Admission/components/Section1.tsx",
-                                        lineNumber: 586,
+                                        lineNumber: 597,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1231,13 +1303,13 @@ function ApplyingFor() {
                                         children: submitStatus.message
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/Admission/components/Section1.tsx",
-                                        lineNumber: 590,
+                                        lineNumber: 601,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/Admission/components/Section1.tsx",
-                                lineNumber: 576,
+                                lineNumber: 587,
                                 columnNumber: 13
                             }, this)
                         ]
@@ -1285,7 +1357,7 @@ function ApplyingFor() {
       `
             }, void 0, false, {
                 fileName: "[project]/src/app/Admission/components/Section1.tsx",
-                lineNumber: 596,
+                lineNumber: 607,
                 columnNumber: 7
             }, this)
         ]

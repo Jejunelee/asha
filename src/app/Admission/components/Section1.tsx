@@ -473,57 +473,68 @@ export default function ApplyingFor() {
             </div>
           )}
 
-          {/* Step 3: Academic Information */}
-          {step === 3 && (
-            <div className="space-y-6 animate-fade-in-up">
-              <div>
-                <label className="font-jost text-base font-semibold text-gray-700 flex items-center gap-1.5 mb-2">
-                  Course Applying For
-                </label>
-                <input
-                  type="text"
-                  name="course"
-                  value={formData.course}
-                  onChange={handleInputChange}
-                  placeholder="e.g. Computer Science, Business Administration, Nursing"
-                  className={`font-jost w-full px-5 py-4 text-base rounded-xl border transition-all duration-200 outline-none focus:ring-2 placeholder:text-gray-400 text-black ${
-                    errors.course
-                      ? 'border-red-400 bg-red-50 focus:border-red-400 focus:ring-red-200'
-                      : 'border-gray-200 bg-gray-50/50 focus:bg-white focus:border-[#7b1e1e] focus:ring-[#7b1e1e]/20'
-                  }`}
-                />
-                {errors.course && (
-                  <p className="font-jost text-xs text-red-500 mt-1">{errors.course}</p>
-                )}
-              </div>
+{/* Step 3: Academic Information */}
+{step === 3 && (
+  <div className="space-y-6 animate-fade-in-up">
+    <div>
+      <label className="font-jost text-base font-semibold text-gray-700 flex items-center gap-1.5 mb-2">
+        Course Applying For
+      </label>
 
-              <div>
-                <label className="font-jost text-base font-semibold text-gray-700 flex items-center gap-1.5 mb-2">
-                  Highest Educational Attainment
-                </label>
-                <select
-                  name="highestEducationalAttainment"
-                  value={formData.highestEducationalAttainment}
-                  onChange={handleInputChange}
-                  className={`font-jost w-full px-5 py-4 text-base rounded-xl border transition-all duration-200 outline-none focus:ring-2 bg-gray-50/50 focus:bg-white focus:border-[#7b1e1e] focus:ring-[#7b1e1e]/20 text-black custom-select ${
-                    errors.highestEducationalAttainment ? 'border-red-400 bg-red-50' : 'border-gray-200'
-                  }`}
-                >
-                  <option value="">Select educational attainment</option>
-                  <option value="elementary">Elementary Graduate</option>
-                  <option value="high-school">High School Graduate</option>
-                  <option value="senior-high">Senior High School Graduate</option>
-                  <option value="associate">Associate Degree</option>
-                  <option value="bachelor">Bachelor's Degree</option>
-                  <option value="master">Master's Degree</option>
-                  <option value="doctorate">Doctorate Degree</option>
-                </select>
-                {errors.highestEducationalAttainment && (
-                  <p className="font-jost text-xs text-red-500 mt-1">{errors.highestEducationalAttainment}</p>
-                )}
-              </div>
-            </div>
-          )}
+      <select
+        name="course"
+        value={formData.course}
+        onChange={handleInputChange}
+        className={`font-jost w-full px-5 py-4 text-base rounded-xl border transition-all duration-200 outline-none focus:ring-2 bg-gray-50/50 focus:bg-white focus:border-[#7b1e1e] focus:ring-[#7b1e1e]/20 text-black custom-select ${
+          errors.course ? 'border-red-400 bg-red-50' : 'border-gray-200'
+        }`}
+      >
+        <option value="">Select course</option>
+        <option value="Hotel & Restaurants Operations">Hotel & Restaurants Operations</option>
+        <option value="Food and Beverage Service">Food and Beverage Service</option>
+        <option value="Barista">Barista</option>
+        <option value="Housekeeping">Housekeeping</option>
+        <option value="Butler">Butler</option>
+        <option value="Front Office">Front Office</option>
+        <option value="Bartending">Bartending</option>
+        <option value="Cookery">Cookery</option>
+      </select>
+
+      {errors.course && (
+        <p className="font-jost text-xs text-red-500 mt-1">{errors.course}</p>
+      )}
+    </div>
+
+    <div>
+      <label className="font-jost text-base font-semibold text-gray-700 flex items-center gap-1.5 mb-2">
+        Highest Educational Attainment
+      </label>
+      <select
+        name="highestEducationalAttainment"
+        value={formData.highestEducationalAttainment}
+        onChange={handleInputChange}
+        className={`font-jost w-full px-5 py-4 text-base rounded-xl border transition-all duration-200 outline-none focus:ring-2 bg-gray-50/50 focus:bg-white focus:border-[#7b1e1e] focus:ring-[#7b1e1e]/20 text-black custom-select ${
+          errors.highestEducationalAttainment ? 'border-red-400 bg-red-50' : 'border-gray-200'
+        }`}
+      >
+        <option value="">Select educational attainment</option>
+        <option value="elementary">Elementary Graduate</option>
+        <option value="high-school">High School Graduate</option>
+        <option value="senior-high">Senior High School Graduate</option>
+        <option value="associate">Associate Degree</option>
+        <option value="bachelor">Bachelor's Degree</option>
+        <option value="master">Master's Degree</option>
+        <option value="doctorate">Doctorate Degree</option>
+      </select>
+
+      {errors.highestEducationalAttainment && (
+        <p className="font-jost text-xs text-red-500 mt-1">
+          {errors.highestEducationalAttainment}
+        </p>
+      )}
+    </div>
+  </div>
+)}
 
           {/* Navigation Buttons */}
           <div className="flex justify-between gap-4 mt-10 pt-6 border-t border-gray-100">

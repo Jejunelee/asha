@@ -45,7 +45,7 @@ export default function Footer() {
   const contactInfo = [
     { icon: FaMapMarkerAlt, text: "Room 504, Brittany Hotel, BGC", link: null },
     { icon: MdPhone, text: "+63 939 633 4548", link: "" },
-    { icon: MdEmail, text: "info@asha.edu.ph", link: "mailto:admission@asha.edu.ph" }
+    { icon: MdEmail, text: "admission@asha.edu.ph", link: "mailto:admission@asha.edu.ph" }
   ];
 
   const quickLinks = [
