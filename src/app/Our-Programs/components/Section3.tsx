@@ -41,7 +41,7 @@ export default function Section1() {
           {/* Key Details - Better spacing on mobile */}
           <div className="font-jost text-black space-y-1.5 sm:space-y-2 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">
             <p>
-              <span className="font-semibold">Duration:</span> 6 days to 1 month
+              <span className="font-semibold">Duration:</span> 5 days to 1 month
             </p>
 
             <p>

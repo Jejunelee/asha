@@ -1,14 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
+import { randomUUID } from 'crypto';
 
 // Initialize Resend with API key from environment variables
 const resendApiKey = process.env.RESEND_API_KEY;
 const admissionsEmail = process.env.ADMISSIONS_EMAIL || process.env.YOUR_EMAIL;
+const WEBHOOK_URL = 'https://cca-connect.techops.ph/web/hook/20b5dbfd-30fd-4dff-a0a7-8f899d41b4dd';
 
 // Log environment check (only in development)
 if (process.env.NODE_ENV === 'development') {
   console.log('✅ Resend API Key exists:', !!resendApiKey);
   console.log('✅ Admissions email exists:', !!admissionsEmail);
+  console.log('✅ Webhook URL configured:', !!WEBHOOK_URL);
   
   if (!resendApiKey) console.error('❌ RESEND_API_KEY is missing from environment variables');
   if (!admissionsEmail) console.error('❌ ADMISSIONS_EMAIL is missing from environment variables');
@@ -51,9 +54,15 @@ export async function POST(request: NextRequest) {
       highestEducationalAttainment 
     } = body;
 
+    // Generate unique identifier for this submission
+    const submissionId = randomUUID();
+    const trackingId = `APPLICATION_${Date.now()}_${Math.random().toString(36).substring(2, 10).toUpperCase()}`;
+
     // Log the received data (development only)
     if (process.env.NODE_ENV === 'development') {
       console.log('📝 Received Application form data:', { 
+        submissionId,
+        trackingId,
         lastName, 
         firstName, 
         email, 
@@ -165,32 +174,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Check if Resend is properly initialized
-    if (!resend || !resendApiKey) {
-      console.error('❌ Resend not configured properly');
-      
-      // In development, return success without sending email
-      if (process.env.NODE_ENV === 'development') {
-        console.log('⚠️ Development mode: Email not sent, but returning success');
-        return NextResponse.json(
-          { 
-            success: true, 
-            message: 'Development mode: Application submitted successfully (email not sent)',
-            data: { id: 'dev-mode' }
-          },
-          { status: 200 }
-        );
-      }
-      
-      return NextResponse.json(
-        { error: 'Email service is not configured properly. Please contact support.' },
-        { status: 500 }
-      );
-    }
-
-    // Send email using Resend
-    const fullName = `${firstName} ${lastName}`;
-    
     // FIXED: Type-safe display formatters with proper type checking
     const getGenderDisplay = (genderValue: string): string => {
       const genderMap: Record<GenderType, string> = {
@@ -229,11 +212,86 @@ export async function POST(request: NextRequest) {
     const civilStatusDisplay = getCivilStatusDisplay(civilStatus);
     const educationDisplay = getEducationDisplay(highestEducationalAttainment);
 
-    const { data, error } = await resend.emails.send({
+    // Prepare payload for external webhook with unique identifiers
+    const fullName = `${firstName} ${lastName}`;
+    const webhookPayload = {
+      unique_id: submissionId,
+      tracking_id: trackingId,
+      timestamp: new Date().toISOString(),
+      formType: 'Student Application',
+      data: {
+        lastName: lastName.trim(),
+        firstName: firstName.trim(),
+        fullName: fullName,
+        email: email.trim(),
+        phoneNumber: phoneNumber.trim(),
+        telephoneNumber: telephoneNumber?.trim() || '',
+        gender: gender,
+        genderDisplay: genderDisplay,
+        civilStatus: civilStatus,
+        civilStatusDisplay: civilStatusDisplay,
+        course: course.trim(),
+        highestEducationalAttainment: highestEducationalAttainment,
+        educationDisplay: educationDisplay,
+      },
+      source: 'CCA Connect Website',
+      metadata: {
+        ip_address: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'unknown',
+        user_agent: request.headers.get('user-agent') || 'unknown',
+        submitted_at: new Date().toISOString(),
+      }
+    };
+
+    // Send to external webhook
+    const webhookPromise = fetch(WEBHOOK_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(webhookPayload),
+    }).catch(error => {
+      console.error('❌ Webhook error:', error);
+      return null;
+    });
+
+    // Check if Resend is properly initialized
+    if (!resend || !resendApiKey) {
+      console.error('❌ Resend not configured properly');
+      
+      // In development, return success without sending email
+      if (process.env.NODE_ENV === 'development') {
+        console.log('⚠️ Development mode: Email not sent, but returning success');
+        
+        // Still execute webhook
+        const webhookResult = await webhookPromise;
+        if (webhookResult?.ok) {
+          console.log('✅ Webhook sent successfully with ID:', submissionId);
+        }
+        
+        return NextResponse.json(
+          { 
+            success: true, 
+            message: 'Development mode: Application submitted successfully (email not sent)',
+            data: { id: 'dev-mode' },
+            submissionId: submissionId,
+            trackingId: trackingId
+          },
+          { status: 200 }
+        );
+      }
+      
+      return NextResponse.json(
+        { error: 'Email service is not configured properly. Please contact support.' },
+        { status: 500 }
+      );
+    }
+
+    // Send email using Resend with unique IDs
+    const emailPromise = resend.emails.send({
       from: 'Admission Application <admission@asha.edu.ph>',
       to: [admissionsEmail || 'admission@asha.edu.ph'],
       replyTo: email,
-      subject: `📝 New Student Application: ${fullName} - ${course}`,
+      subject: `[${trackingId}] 📝 New Student Application: ${fullName} - ${course}`,
       html: `
         <!DOCTYPE html>
         <html>
@@ -271,6 +329,14 @@ export async function POST(request: NextRequest) {
               border-radius: 0 0 12px 12px;
               border: 1px solid #eee;
               border-top: none;
+            }
+            .tracking-info {
+              background: #f0f0f0;
+              padding: 10px;
+              border-radius: 6px;
+              margin-bottom: 20px;
+              font-family: monospace;
+              font-size: 12px;
             }
             .section {
               background: white;
@@ -353,6 +419,11 @@ export async function POST(request: NextRequest) {
           </div>
           
           <div class="content">
+            <div class="tracking-info">
+              <strong>🔑 Tracking ID:</strong> ${trackingId}<br>
+              <strong>🆔 Submission ID:</strong> ${submissionId}
+            </div>
+            
             <div class="section">
               <h2>
                 <span>📋</span> Personal Information
@@ -414,6 +485,7 @@ export async function POST(request: NextRequest) {
           <div class="footer">
             <p>This application was submitted from your website's admission form.</p>
             <p>📅 Submitted: ${new Date().toLocaleString()}</p>
+            <p style="font-family: monospace; font-size: 10px;">Reference: ${trackingId}</p>
             <p style="font-size: 11px; color: #999;">Please review the application and contact the applicant within 2-3 business days.</p>
           </div>
         </body>
@@ -422,6 +494,9 @@ export async function POST(request: NextRequest) {
       text: `
 NEW STUDENT APPLICATION
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Tracking ID: ${trackingId}
+Submission ID: ${submissionId}
 
 PERSONAL INFORMATION
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -445,25 +520,56 @@ Submitted: ${new Date().toLocaleString()}
 
 Reply to applicant: ${email}
 Call applicant: ${phoneNumber}
+Reference: ${trackingId}
       `,
     });
 
-    // Handle Resend errors
-    if (error) {
-      console.error('❌ Resend error:', error);
+    // Execute both promises simultaneously
+    const [webhookResult, emailResult] = await Promise.allSettled([webhookPromise, emailPromise]);
+
+    // Handle email errors
+    let emailError = null;
+    let emailData = null;
+    
+    if (emailResult.status === 'rejected') {
+      emailError = emailResult.reason;
+      console.error('❌ Resend error:', emailError);
       return NextResponse.json(
-        { error: `Failed to submit application: ${error.message}. Please try again later.` },
+        { error: `Failed to submit application: ${emailError.message}. Please try again later.` },
         { status: 500 }
       );
+    } else {
+      emailData = emailResult.value;
+      if (emailData.error) {
+        console.error('❌ Resend error:', emailData.error);
+        return NextResponse.json(
+          { error: `Failed to submit application: ${emailData.error.message}. Please try again later.` },
+          { status: 500 }
+        );
+      }
     }
 
-    // Success response
-    console.log('✅ Application email sent successfully:', data);
+    // Log webhook result (don't fail the request if webhook fails)
+    if (webhookResult.status === 'fulfilled' && webhookResult.value) {
+      const webhookResponse = await webhookResult.value;
+      if (webhookResponse.ok) {
+        console.log('✅ Webhook sent successfully with ID:', submissionId);
+      } else {
+        console.error('❌ Webhook failed with status:', webhookResponse.status);
+      }
+    } else if (webhookResult.status === 'rejected') {
+      console.error('❌ Webhook request failed:', webhookResult.reason);
+    }
+
+    // Success response with unique identifiers
+    console.log('✅ Application email sent successfully:', emailData.data);
     return NextResponse.json(
       { 
         success: true,
         message: '🎉 Application submitted successfully! Our admissions team will contact you within 24 hours.',
-        data: data
+        data: emailData.data,
+        submissionId: submissionId,
+        trackingId: trackingId
       },
       { status: 200 }
     );
@@ -480,4 +586,9 @@ Call applicant: ${phoneNumber}
       { status: 500 }
     );
   }
+}
+
+// Add OPTIONS method for CORS if needed
+export async function OPTIONS() {
+  return NextResponse.json({}, { status: 200 });
 }

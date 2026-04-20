@@ -271,7 +271,7 @@ function Section1() {
                                             lineNumber: 44,
                                             columnNumber: 15
                                         }, this),
-                                        " 6 days to 1 month"
+                                        " 5 days to 1 month"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/Our-Programs/components/Section3.tsx",

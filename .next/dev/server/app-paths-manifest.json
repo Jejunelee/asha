@@ -1,4 +1,15 @@
 {
   "/Admission/page": "app/Admission/page.js",
+  "/Alumni/page": "app/Alumni/page.js",
+  "/Our-Programs/F&B-Service/page": "app/Our-Programs/F&B-Service/page.js",
+  "/Our-Programs/Flagship/page": "app/Our-Programs/Flagship/page.js",
+  "/Our-Programs/FnB/page": "app/Our-Programs/FnB/page.js",
+  "/Our-Programs/Professional-Housekeeping/page": "app/Our-Programs/Professional-Housekeeping/page.js",
+  "/Our-Programs/page": "app/Our-Programs/page.js",
+  "/Partners/page": "app/Partners/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/send-application/route": "app/api/send-application/route.js",
+  "/api/send-inquiry/route": "app/api/send-inquiry/route.js",
+  "/api/send-mail/route": "app/api/send-mail/route.js",
   "/page": "app/page.js"
 }

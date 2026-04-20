@@ -1,29 +1,24 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Section4() {
-  const [openClassic, setOpenClassic] = useState(false);
-  const [openSignature, setOpenSignature] = useState(false);
-  const [openPremium, setOpenPremium] = useState(false);
-  const [openBarista, setOpenBarista] = useState(false);
-  const [openFrontOffice, setOpenFrontOffice] = useState(false);
-  const [openCookery, setOpenCookery] = useState(false);
-  const [openFbService, setOpenFbService] = useState(false);
-  const [openHousekeeping, setOpenHousekeeping] = useState(false);
-  const [openExecutiveButler, setOpenExecutiveButler] = useState(false);
-  const [openBartending, setOpenBartending] = useState(false);
+  const router = useRouter();
 
   const items = [
-    { title: "BARISTA", image: "/Programs/7.png", action: () => setOpenBarista(true), description: "Practical barista skills for café-ready careers." },
-    { title: "FRONT OFFICE", image: "/Programs/4.png", action: () => setOpenFrontOffice(true), description: "Master guest service and front desk operations." },
-    { title: "COOKERY", image: "/Programs/5.png", action: () => setOpenCookery(true), description: "Learn practical skills for the professional kitchen." },
-    { title: "F&B SERVICE", image: "/Programs/6.png", action: () => setOpenFbService(true), description: "Learn proper service standards, and guest care." },
-    { title: "HOUSEKEEPING", image: "/Programs/8.png", action: () => setOpenHousekeeping(true), description: "Detail-driven housekeeping excellence." },
-    { title: "EXECUTIVE BUTLER", image: "/Programs/3.png", action: () => setOpenExecutiveButler(true), description: "Refined service standards for elite hospitality." },
-    { title: "BARTENDING", image: "/Programs/9.png", action: () => setOpenBartending(true), description: "Master bar skills, speed, and service." },
+    { title: "Barista", image: "/Programs/7.png", path: "/Our-Programs/Barista", description: "Practical barista skills for café-ready careers." },
+    { title: "Front Office", image: "/Programs/4.png", path: "/Our-Programs/Front-Office", description: "Master guest service and front desk operations." },
+    { title: "Cookery", image: "/Programs/5.png", path: "/Our-Programs/Cookery", description: "Learn practical skills for the professional kitchen." },
+    { title: "F&B Service", image: "/Programs/6.png", path: "/Our-Programs/F&B-Service", description: "Learn proper service standards, and guest care." },
+    { title: "Housekeeping", image: "/Programs/8.png", path: "/Our-Programs/Professional-Housekeeping", description: "Detail-driven housekeeping excellence." },
+    { title: "Executive Butler", image: "/Programs/3.png", path: "/Our-Programs/Executive-Butler", description: "Refined service standards for elite hospitality." },
+    { title: "Bartending", image: "/Programs/9.png", path: "/Our-Programs/Bartending", description: "Master bar skills, speed, and service." },
   ];
+
+  const handleNavigation = (path: string) => {
+    router.push(path);
+  };
 
   return (
     <>
@@ -32,8 +27,18 @@ export default function Section4() {
         </div>
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 md:gap-8 px-4 sm:px-6 md:px-8">
           {items.map((item, i) => (
-            <div key={i} onClick={item.action} className="relative w-full aspect-[4/3] md:aspect-square overflow-hidden rounded-xl md:rounded-lg shadow-lg md:shadow-xl cursor-pointer group">
-              <Image src={item.image} alt={item.title} fill className="object-cover transition-transform duration-700 group-hover:scale-110" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" />
+            <div 
+              key={i} 
+              onClick={() => handleNavigation(item.path)} 
+              className="relative w-full aspect-[4/3] md:aspect-square overflow-hidden rounded-xl md:rounded-lg shadow-lg md:shadow-xl cursor-pointer group"
+            >
+              <Image 
+                src={item.image} 
+                alt={item.title} 
+                fill 
+                className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" 
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30" />
               
               {/* Default state - always visible */}
@@ -52,16 +57,11 @@ export default function Section4() {
           ))}
         </div>
         <div className="md:hidden text-center mt-8">
-          <button onClick={() => setOpenClassic(true)} className="font-jost inline-flex items-center gap-2 text-[#F28C28] font-medium">
+          <button className="font-jost inline-flex items-center gap-2 text-[#F28C28] font-medium">
             View all offerings
           </button>
         </div>
       </section>
-
-      {/* Modal components would go here for each course */}
-      {/* Example modal structure - you'll need to implement these */}
-      {/* {openBarista && <Modal title="BARISTA" description="..." onClose={() => setOpenBarista(false)} />} */}
-      {/* Similarly for other courses */}
     </>
   );
 }

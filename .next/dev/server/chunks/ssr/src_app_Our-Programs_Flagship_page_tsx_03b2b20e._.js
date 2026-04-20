@@ -8,8 +8,10 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-ssr] (ecmascript)");
 // app/our-programs/flagship/page.tsx
 "use client";
+;
 ;
 ;
 function FlagshipPage() {
@@ -30,15 +32,15 @@ function FlagshipPage() {
                             sizes: "100vw"
                         }, void 0, false, {
                             fileName: "[project]/src/app/Our-Programs/Flagship/page.tsx",
-                            lineNumber: 14,
-                            columnNumber: 13
+                            lineNumber: 15,
+                            columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"
                         }, void 0, false, {
                             fileName: "[project]/src/app/Our-Programs/Flagship/page.tsx",
-                            lineNumber: 24,
-                            columnNumber: 13
+                            lineNumber: 25,
+                            columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "absolute inset-0 opacity-10 pointer-events-none",
@@ -49,24 +51,24 @@ function FlagshipPage() {
                                 }
                             }, void 0, false, {
                                 fileName: "[project]/src/app/Our-Programs/Flagship/page.tsx",
-                                lineNumber: 28,
-                                columnNumber: 17
+                                lineNumber: 29,
+                                columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/Our-Programs/Flagship/page.tsx",
-                            lineNumber: 27,
-                            columnNumber: 13
+                            lineNumber: 28,
+                            columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/Our-Programs/Flagship/page.tsx",
-                    lineNumber: 13,
-                    columnNumber: 13
+                    lineNumber: 14,
+                    columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/Our-Programs/Flagship/page.tsx",
-                lineNumber: 11,
-                columnNumber: 9
+                lineNumber: 12,
+                columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                 className: "w-full bg-[#f3f3f3] py-12 sm:py-12 md:py-14 lg:py-16",
@@ -83,30 +85,30 @@ function FlagshipPage() {
                                         children: "Flagship Program"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/Our-Programs/Flagship/page.tsx",
-                                        lineNumber: 42,
-                                        columnNumber: 17
+                                        lineNumber: 43,
+                                        columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: "bg-[#921A1B] text-white text-xl px-4 py-3 rounded-full font-medium",
                                         children: "1 year Program"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/Our-Programs/Flagship/page.tsx",
-                                        lineNumber: 46,
-                                        columnNumber: 17
+                                        lineNumber: 47,
+                                        columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/Our-Programs/Flagship/page.tsx",
-                                lineNumber: 41,
-                                columnNumber: 17
+                                lineNumber: 42,
+                                columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                 className: "font-jost text-lg sm:text-xl md:text-2xl lg:text-3xl text-[#921A1B] font-medium flex flex-wrap items-center gap-3",
                                 children: "Certificate in Hotel and Restaurant Operations (CHRO)"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/Our-Programs/Flagship/page.tsx",
-                                lineNumber: 51,
-                                columnNumber: 17
+                                lineNumber: 52,
+                                columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "font-jost leading-tight text-black space-y-4 text-sm sm:text-base md:text-2xl",
@@ -115,171 +117,178 @@ function FlagshipPage() {
                                         children: "One year. Five skills. Real job offers when you graduate."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/Our-Programs/Flagship/page.tsx",
-                                        lineNumber: 56,
-                                        columnNumber: 17
+                                        lineNumber: 57,
+                                        columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         children: "Most hospitality schools teach you what a hotel room should look like. We teach you how to prepare 20 of them before checkout time."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/Our-Programs/Flagship/page.tsx",
-                                        lineNumber: 60,
-                                        columnNumber: 17
+                                        lineNumber: 61,
+                                        columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         children: "Most programs explain how restaurants work. We put you on the floor during Friday night dinner rush."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/Our-Programs/Flagship/page.tsx",
-                                        lineNumber: 64,
-                                        columnNumber: 17
+                                        lineNumber: 65,
+                                        columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         children: [
                                             "The CHRO program gives you complete, hands-on mastery of five core hospitality skills:",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                 fileName: "[project]/src/app/Our-Programs/Flagship/page.tsx",
-                                                lineNumber: 70,
-                                                columnNumber: 21
+                                                lineNumber: 71,
+                                                columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
                                                 children: "Food & Beverage Service"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/Our-Programs/Flagship/page.tsx",
-                                                lineNumber: 71,
-                                                columnNumber: 21
+                                                lineNumber: 72,
+                                                columnNumber: 17
                                             }, this),
                                             " – Table service, customer interaction, restaurant operations",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                 fileName: "[project]/src/app/Our-Programs/Flagship/page.tsx",
-                                                lineNumber: 72,
-                                                columnNumber: 21
+                                                lineNumber: 73,
+                                                columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
                                                 children: "Bartending"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/Our-Programs/Flagship/page.tsx",
-                                                lineNumber: 73,
-                                                columnNumber: 21
+                                                lineNumber: 74,
+                                                columnNumber: 17
                                             }, this),
                                             " – Classic and contemporary cocktails, bar management, service speed",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                 fileName: "[project]/src/app/Our-Programs/Flagship/page.tsx",
-                                                lineNumber: 74,
-                                                columnNumber: 21
+                                                lineNumber: 75,
+                                                columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
                                                 children: "Commercial Cooking"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/Our-Programs/Flagship/page.tsx",
-                                                lineNumber: 75,
-                                                columnNumber: 21
+                                                lineNumber: 76,
+                                                columnNumber: 17
                                             }, this),
                                             " – Knife skills, cooking methods, kitchen operations, plating",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                 fileName: "[project]/src/app/Our-Programs/Flagship/page.tsx",
-                                                lineNumber: 76,
-                                                columnNumber: 21
+                                                lineNumber: 77,
+                                                columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
                                                 children: "Housekeeping"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/Our-Programs/Flagship/page.tsx",
-                                                lineNumber: 77,
-                                                columnNumber: 21
+                                                lineNumber: 78,
+                                                columnNumber: 17
                                             }, this),
                                             " – Room preparation, linen care, guest service, quality standards",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                 fileName: "[project]/src/app/Our-Programs/Flagship/page.tsx",
-                                                lineNumber: 78,
-                                                columnNumber: 21
+                                                lineNumber: 79,
+                                                columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
                                                 children: "Front Office"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/Our-Programs/Flagship/page.tsx",
-                                                lineNumber: 79,
-                                                columnNumber: 21
+                                                lineNumber: 80,
+                                                columnNumber: 17
                                             }, this),
                                             " – Check-in/out procedures, reservations, guest relations, problem-solving"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/Our-Programs/Flagship/page.tsx",
-                                        lineNumber: 68,
-                                        columnNumber: 17
+                                        lineNumber: 69,
+                                        columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "font-semibold",
                                         children: "Here's the difference:"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/Our-Programs/Flagship/page.tsx",
-                                        lineNumber: 82,
-                                        columnNumber: 17
+                                        lineNumber: 83,
+                                        columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         children: "You won't just learn these skills—you'll practice them in real hotels and restaurants with real guests who expect real excellence. Your internship is integrated throughout your training, not just tacked on at the end, so by the time you graduate, you've already worked the job you're applying for."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/Our-Programs/Flagship/page.tsx",
-                                        lineNumber: 86,
-                                        columnNumber: 17
+                                        lineNumber: 87,
+                                        columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         children: "On graduation day, you'll be choosing which job offer to accept, not hoping someone takes a chance on you."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/Our-Programs/Flagship/page.tsx",
-                                        lineNumber: 90,
-                                        columnNumber: 17
+                                        lineNumber: 91,
+                                        columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/Our-Programs/Flagship/page.tsx",
-                                lineNumber: 55,
-                                columnNumber: 17
+                                lineNumber: 56,
+                                columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "mt-10 flex flex-col sm:flex-row gap-4",
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                        className: "font-jost bg-[#921A1B] hover:bg-[#6e1415] text-white px-32 py-3 rounded-2xl text-xl font-medium transition shadow-md hover:shadow-lg",
-                                        children: "Enroll Now"
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                        href: "/Admission",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                            className: "font-jost bg-[#921A1B] hover:bg-[#6e1415] text-white px-32 py-3 rounded-2xl text-xl font-medium transition shadow-md hover:shadow-lg",
+                                            children: "Enroll Now"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/app/Our-Programs/Flagship/page.tsx",
+                                            lineNumber: 99,
+                                            columnNumber: 17
+                                        }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/Our-Programs/Flagship/page.tsx",
-                                        lineNumber: 97,
-                                        columnNumber: 17
+                                        lineNumber: 98,
+                                        columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                         className: "font-jost bg-[#938F8F] hover:bg-[#7a7676] text-white px-32 py-3 rounded-2xl text-xl font-medium transition shadow-md hover:shadow-lg",
                                         children: "Download Curriculum"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/Our-Programs/Flagship/page.tsx",
-                                        lineNumber: 100,
-                                        columnNumber: 17
+                                        lineNumber: 103,
+                                        columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/Our-Programs/Flagship/page.tsx",
-                                lineNumber: 96,
-                                columnNumber: 17
+                                lineNumber: 97,
+                                columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/Our-Programs/Flagship/page.tsx",
-                        lineNumber: 40,
-                        columnNumber: 13
+                        lineNumber: 41,
+                        columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/Our-Programs/Flagship/page.tsx",
-                    lineNumber: 37,
-                    columnNumber: 13
+                    lineNumber: 38,
+                    columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/Our-Programs/Flagship/page.tsx",
-                lineNumber: 36,
-                columnNumber: 9
+                lineNumber: 37,
+                columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/Our-Programs/Flagship/page.tsx",
-        lineNumber: 9,
-        columnNumber: 9
+        lineNumber: 10,
+        columnNumber: 5
     }, this);
 }
 }),

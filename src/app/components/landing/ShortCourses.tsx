@@ -20,7 +20,7 @@ export default function Section2() {
         <div className="text-center mb-6 md:mb-8 lg:mb-12 px-3 sm:px-4">
           <h2 className="text-lg sm:text-xl md:text-2xl lg:text-[35px] font-jost font-semibold text-black">
             Also Offering: <span className="text-[#921A1B]">Short Courses</span>
-            <span className="block text-xs sm:text-sm md:text-base text-gray-600 mt-1 md:inline md:mt-0 md:ml-2">(6 Days - 1 month)</span>
+            <span className="block text-xs sm:text-sm md:text-base text-gray-600 mt-1 md:inline md:mt-0 md:ml-2">(5 Days - 1 month)</span>
           </h2>
         </div>
         
