@@ -49,7 +49,7 @@ export default function Header() {
     { href: "/About", label: "About" },
     { href: "/Our-Programs", label: "Our Programs" },
     { href: "/Partners", label: "Partners & Careers" },
-    { href: "/Alumni", label: "Alumni" },
+    { href: "/Alumni", label: "Testimonials" },
     { href: "/Admission", label: "Admission" },
   ];
 

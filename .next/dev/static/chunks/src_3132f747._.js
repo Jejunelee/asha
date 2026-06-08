@@ -958,7 +958,7 @@ function Header() {
         },
         {
             href: "/Alumni",
-            label: "Alumni"
+            label: "Testimonials"
         },
         {
             href: "/Admission",
