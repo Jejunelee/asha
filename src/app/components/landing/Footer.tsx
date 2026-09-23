@@ -52,6 +52,7 @@ export default function Footer() {
     { name: "About Us", href: "/About" },
     { name: "Programs", href: "/Our-Offerings" },
     { name: "Admissions", href: "/Admission" },
+    { name: "Privacy Policy", href: "/Privacy" },
   ];
 
   return (
